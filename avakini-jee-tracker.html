@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVAKINI — JEE Mains 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080b;--s1:#0e0e13;--s2:#141419;--s3:#1a1a22;--s4:#21212c;--s5:#2a2a38;
+  --bd:rgba(255,255,255,0.055);--bd2:rgba(255,255,255,0.10);--bd3:rgba(255,255,255,0.18);
+  --t1:#f4f4f9;--t2:#b0b0c8;--t3:#70708a;--t4:#3c3c55;--t5:#242438;
+  --acc:#6366f1;--acc2:#818cf8;--acc3:rgba(99,102,241,0.14);
+  --phy:#3b82f6;--phy2:#60a5fa;--phya:rgba(59,130,246,0.13);
+  --chem:#10b981;--chem2:#34d399;--chema:rgba(16,185,129,0.13);
+  --math:#a855f7;--math2:#c084fc;--matha:rgba(168,85,247,0.13);
+  --mock:#f59e0b;--mock2:#fbbf24;--mocka:rgba(245,158,11,0.13);
+  --grn:#22c55e;--grn2:#4ade80;--grna:rgba(34,197,94,0.13);
+  --red:#ef4444;--red2:#f87171;--reda:rgba(239,68,68,0.13);
+  --yel:#eab308;--cyan:#06b6d4;
+  --r:14px;--rs:9px;
+  --sh:0 4px 24px rgba(0,0,0,0.45);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;overflow:hidden;}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--t1);-webkit-font-smoothing:antialiased;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 700px 500px at 10% 15%,rgba(99,102,241,0.05),transparent 70%),radial-gradient(ellipse 600px 400px at 90% 85%,rgba(168,85,247,0.04),transparent 70%);pointer-events:none;z-index:0;}
+
+/* ── SIDEBAR ── */
+#sb{position:fixed;left:0;top:0;bottom:0;width:220px;background:rgba(14,14,19,0.97);border-right:1px solid var(--bd);display:flex;flex-direction:column;z-index:100;backdrop-filter:blur(20px);}
+.sb-logo{padding:18px 16px 14px;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:11px;}
+.logo-name{font-size:16px;font-weight:900;letter-spacing:-0.3px;background:linear-gradient(135deg,#fff 0%,var(--acc2) 60%,var(--math2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.logo-sub{font-size:9px;color:var(--t4);font-weight:600;margin-top:1px;letter-spacing:0.5px;text-transform:uppercase;}
+.nav{flex:1;padding:10px 8px;display:flex;flex-direction:column;gap:2px;overflow-y:auto;scrollbar-width:none;}
+.nav::-webkit-scrollbar{display:none;}
+.ni{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:var(--rs);color:var(--t3);font-size:12.5px;font-weight:500;cursor:pointer;transition:all .15s;border:none;background:none;width:100%;text-align:left;font-family:'Poppins',sans-serif;position:relative;}
+.ni:hover{background:var(--s3);color:var(--t2);}
+.ni.on{background:var(--acc3);color:var(--acc2);font-weight:700;}
+.ni.on::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:55%;background:var(--acc2);border-radius:0 2px 2px 0;}
+.ni .mir{font-size:18px;flex-shrink:0;}
+.nbadge{margin-left:auto;background:var(--s5);color:var(--t4);font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:100px;}
+.nbadge.live{background:var(--grna);color:var(--grn);}
+.sb-foot{padding:10px 8px;border-top:1px solid var(--bd);}
+.dc-box{background:linear-gradient(135deg,var(--s3),var(--s2));border:1px solid var(--bd2);border-radius:var(--r);padding:12px;position:relative;overflow:hidden;}
+.dc-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 100% 100%,rgba(99,102,241,0.07),transparent 70%);}
+.dc-l{font-size:9px;color:var(--t4);font-weight:700;text-transform:uppercase;letter-spacing:0.6px;}
+.dc-v{font-size:22px;font-weight:900;line-height:1;margin:3px 0 1px;}
+.dc-s{font-size:10px;color:var(--t4);}
+.dc-bar{height:3px;background:var(--s5);border-radius:2px;margin-top:8px;overflow:hidden;}
+.dc-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--acc),var(--acc2),var(--math2));transition:width .8s cubic-bezier(.4,0,.2,1);box-shadow:0 0 8px var(--acc);}
+
+/* ── MAIN ── */
+#main{margin-left:220px;height:100vh;display:flex;flex-direction:column;position:relative;z-index:1;overflow:hidden;}
+.topbar{height:56px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(8,8,11,0.92);backdrop-filter:blur(20px);flex-shrink:0;z-index:50;}
+.tb-title{font-size:14px;font-weight:700;}
+.tb-sub{font-size:10px;color:var(--t4);}
+.pills{display:flex;gap:6px;}
+.pill{display:flex;align-items:center;gap:5px;padding:4px 11px;border-radius:100px;font-size:11px;font-weight:600;border:1px solid var(--bd2);background:var(--s2);}
+.pill .mir{font-size:13px;}
+.pill.g{border-color:rgba(34,197,94,0.25);color:var(--grn);background:rgba(34,197,94,0.07);}
+.pill.o{border-color:rgba(245,158,11,0.25);color:var(--mock);background:rgba(245,158,11,0.07);}
+.pill.p{border-color:rgba(99,102,241,0.25);color:var(--acc2);background:rgba(99,102,241,0.07);}
+
+/* ── PAGES ── */
+.pages{flex:1;overflow:hidden;position:relative;}
+.page{display:none;height:100%;overflow-y:auto;animation:fu .22s ease;}
+.page.on{display:block;}
+.page.fullh{overflow:hidden;}
+@keyframes fu{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.padded{padding:24px;}
+
+/* ── GENERIC COMPONENTS ── */
+.card{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);}
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.st{font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:7px;}
+.st .mir{font-size:16px;color:var(--t3);}
+.ss{font-size:11px;color:var(--t4);}
+.div{height:1px;background:var(--bd);margin:18px 0;}
+.empty{text-align:center;padding:32px;color:var(--t4);font-size:12px;}
+.empty .mir{font-size:32px;margin-bottom:7px;display:block;}
+
+/* grids */
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.ga{display:grid;grid-template-columns:repeat(auto-fill,minmax(256px,1fr));gap:10px;}
+.gams{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;}
+
+/* stat cards */
+.sc{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:16px 18px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;}
+.sc:hover{border-color:var(--bd3);transform:translateY(-2px);box-shadow:var(--sh);}
+.sc::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;opacity:.8;}
+.sc.phy::after{background:linear-gradient(90deg,var(--phy),transparent);}
+.sc.chem::after{background:linear-gradient(90deg,var(--chem),transparent);}
+.sc.math::after{background:linear-gradient(90deg,var(--math),transparent);}
+.sc.mock::after{background:linear-gradient(90deg,var(--mock),transparent);}
+.sc.acc::after{background:linear-gradient(90deg,var(--acc),transparent);}
+.sc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;}
+.sc-ring{position:relative;width:46px;height:46px;flex-shrink:0;}
+.sc-ring svg{transform:rotate(-90deg);}
+.sc-ri{fill:none;stroke-width:3.5;}
+.sc-rf{fill:none;stroke-width:3.5;stroke-linecap:round;transition:stroke-dashoffset 1s cubic-bezier(.4,0,.2,1);}
+.sc-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.sc-lbl{font-size:9.5px;font-weight:700;color:var(--t4);text-transform:uppercase;letter-spacing:.6px;}
+.sc-val{font-size:26px;font-weight:900;line-height:1.1;letter-spacing:-0.5px;}
+.sc-sub{font-size:10px;color:var(--t3);margin-top:2px;}
+.sc-bar{height:2.5px;background:var(--s5);border-radius:2px;margin-top:10px;overflow:hidden;}
+.sc-barf{height:100%;border-radius:2px;transition:width .8s cubic-bezier(.4,0,.2,1);}
+.sc-barf.phy{background:linear-gradient(90deg,var(--phy),var(--phy2));}
+.sc-barf.chem{background:linear-gradient(90deg,var(--chem),var(--chem2));}
+.sc-barf.math{background:linear-gradient(90deg,var(--math),var(--math2));}
+.sc-barf.mock{background:linear-gradient(90deg,var(--mock),var(--mock2));}
+.sc-barf.acc{background:linear-gradient(90deg,var(--acc),var(--acc2));}
+
+/* ── HERO PROGRESS ── */
+.hero-progress{display:grid;grid-template-columns:1fr 320px;gap:16px;margin-bottom:20px;}
+.big-ring-card{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:20px;display:flex;align-items:center;gap:20px;}
+.big-ring{position:relative;width:104px;height:104px;flex-shrink:0;}
+.big-ring svg{transform:rotate(-90deg);width:104px;height:104px;}
+.big-ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.brc-val{font-size:20px;font-weight:900;line-height:1;}
+.brc-lbl{font-size:8.5px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;}
+.bri-title{font-size:15px;font-weight:800;margin-bottom:5px;}
+.bri-sub{font-size:11.5px;color:var(--t3);margin-bottom:12px;line-height:1.5;}
+.bri-stats{display:flex;gap:16px;}
+.bri-sv{font-size:17px;font-weight:800;line-height:1;}
+.bri-sl{font-size:9px;color:var(--t3);font-weight:600;text-transform:uppercase;letter-spacing:.3px;margin-top:2px;}
+.sub-bars-card{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:16px;}
+.sbr{display:flex;align-items:center;gap:9px;margin-bottom:11px;}
+.sbr:last-child{margin-bottom:0;}
+.sbi{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.sbi .mir{font-size:13px;}
+.sbi.phy{background:var(--phya);color:var(--phy);}
+.sbi.chem{background:var(--chema);color:var(--chem);}
+.sbi.math{background:var(--matha);color:var(--math);}
+.sbi.mock{background:var(--mocka);color:var(--mock);}
+.sbinfo{flex:1;}
+.sbtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;}
+.sbname{font-size:11.5px;font-weight:600;color:var(--t2);}
+.sbval{font-size:10.5px;font-weight:700;}
+.sbtrack{height:5px;background:var(--s5);border-radius:3px;overflow:hidden;}
+.sbfill{height:100%;border-radius:3px;transition:width .8s cubic-bezier(.4,0,.2,1);}
+.sbfill.phy{background:linear-gradient(90deg,var(--phy),var(--phy2));box-shadow:0 0 5px rgba(59,130,246,.4);}
+.sbfill.chem{background:linear-gradient(90deg,var(--chem),var(--chem2));box-shadow:0 0 5px rgba(16,185,129,.4);}
+.sbfill.math{background:linear-gradient(90deg,var(--math),var(--math2));box-shadow:0 0 5px rgba(168,85,247,.4);}
+.sbfill.mock{background:linear-gradient(90deg,var(--mock),var(--mock2));box-shadow:0 0 5px rgba(245,158,11,.4);}
+
+/* heatmap */
+.heatmap-card{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:16px;margin-top:12px;}
+.hm-grid{display:grid;grid-template-columns:repeat(23,1fr);gap:3px;margin-top:11px;}
+.hmc{aspect-ratio:1;border-radius:3px;cursor:pointer;transition:transform .12s;position:relative;}
+.hmc:hover{transform:scale(1.2);z-index:1;}
+.hmc.empty{background:var(--s5);}
+.hmc.done{background:var(--grn);box-shadow:0 0 5px rgba(34,197,94,.4);}
+.hmc.today-c{outline:2px solid var(--acc2);outline-offset:1px;}
+.hmc.future{background:var(--s4);opacity:.4;}
+.hmc.mock-p{background:rgba(245,158,11,.25);}
+.hmc.mock-d{background:var(--mock);box-shadow:0 0 5px rgba(245,158,11,.4);}
+
+/* today focus */
+.tfc{background:linear-gradient(135deg,rgba(99,102,241,.07),rgba(168,85,247,.05));border:1px solid rgba(99,102,241,.2);border-radius:var(--r);padding:18px;margin-bottom:18px;position:relative;overflow:hidden;}
+.tfc::before{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;background:radial-gradient(circle,rgba(99,102,241,.09),transparent 70%);pointer-events:none;}
+.tfd{font-size:9.5px;font-weight:700;color:var(--acc2);text-transform:uppercase;letter-spacing:.7px;}
+.tft{font-size:16px;font-weight:800;margin:3px 0 12px;letter-spacing:-0.2px;}
+.tfch{display:flex;align-items:center;gap:9px;padding:9px 12px;background:rgba(0,0,0,.2);border-radius:8px;margin-bottom:5px;transition:background .13s;}
+.tfch:hover{background:rgba(0,0,0,.3);}
+.tfst{font-size:9px;font-weight:700;padding:3px 8px;border-radius:5px;cursor:pointer;transition:all .13s;white-space:nowrap;}
+.tfst.pending{background:var(--s5);color:var(--t3);}
+.tfst.in-progress{background:var(--mocka);color:var(--mock);}
+.tfst.done{background:var(--grna);color:var(--grn);}
+
+/* misc */
+.stag{display:inline-flex;align-items:center;padding:2px 8px;border-radius:5px;font-size:10px;font-weight:700;}
+.stag.P{background:var(--phya);color:var(--phy);}
+.stag.C{background:var(--chema);color:var(--chem);}
+.stag.M{background:var(--matha);color:var(--math);}
+.pr{font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px;flex-shrink:0;}
+.pr.H{background:var(--reda);color:var(--red);}
+.pr.M{background:var(--mocka);color:var(--mock);}
+.pr.L{background:var(--s5);color:var(--t4);}
+.ssw{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:6px;font-size:10px;font-weight:700;border:1px solid var(--bd2);cursor:pointer;}
+.ssw.pending{background:var(--s4);color:var(--t3);}
+.ssw.in-progress{background:var(--mocka);color:var(--mock);}
+.ssw.done{background:var(--grna);color:var(--grn);}
+.ssel{background:transparent;border:none;color:inherit;font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;cursor:pointer;outline:none;}
+.ssel option{background:var(--s2);color:var(--t1);}
+.fb{padding:5px 12px;border-radius:6px;border:1px solid var(--bd);background:transparent;color:var(--t3);font-family:'Poppins',sans-serif;font-size:10.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .13s;}
+.fb:hover,.fb.on{background:var(--s3);border-color:var(--bd2);color:var(--t2);}
+.fb .dot{width:5px;height:5px;border-radius:50%;}
+.frow{display:flex;gap:5px;margin-bottom:14px;flex-wrap:wrap;}
+.tw{border-radius:var(--r);border:1px solid var(--bd);overflow:hidden;}
+table.tb{width:100%;border-collapse:collapse;}
+.tb th{background:var(--s1);padding:10px 14px;text-align:left;font-size:10px;font-weight:700;color:var(--t4);text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid var(--bd);}
+.tb td{padding:10px 14px;border-bottom:1px solid var(--bd);font-size:12px;}
+.tb tr:last-child td{border-bottom:none;}
+.tb tr:hover td{background:rgba(255,255,255,.015);}
+/* day cards */
+.dc2{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:border-color .15s,transform .2s,box-shadow .2s;}
+.dc2:hover{border-color:var(--bd3);transform:translateY(-2px);box-shadow:var(--sh);}
+.dc2.td{border-color:var(--acc);box-shadow:0 0 0 1px rgba(99,102,241,.12);}
+.dc2.dd{opacity:.7;}
+.dprog{height:2px;background:var(--s5);}
+.dprogf{height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2));transition:width .5s cubic-bezier(.4,0,.2,1);}
+.dh{padding:12px 14px;border-bottom:1px solid var(--bd);display:flex;align-items:flex-start;justify-content:space-between;gap:7px;}
+.dnum{font-size:9px;font-weight:700;color:var(--t4);letter-spacing:.8px;text-transform:uppercase;}
+.dnum.tl{color:var(--acc2);}
+.dtit{font-size:12px;font-weight:700;margin-top:2px;line-height:1.3;}
+.dbadge{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:5px;font-size:9px;font-weight:800;flex-shrink:0;}
+.dbadge.phy{background:var(--phya);color:var(--phy);}
+.dbadge.math{background:var(--matha);color:var(--math);}
+.dbadge.mock{background:var(--mocka);color:var(--mock);}
+.dbadge.rev{background:rgba(234,179,8,.1);color:var(--yel);}
+.dbadge .mir{font-size:11px;}
+.dbody{padding:11px 14px;flex:1;}
+.chl{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.chi{display:flex;align-items:center;gap:6px;font-size:11px;}
+.cdot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.cdot.P{background:var(--phy);}
+.cdot.C{background:var(--chem);}
+.cdot.M{background:var(--math);}
+.cn{flex:1;color:var(--t2);line-height:1.4;}
+.cn.dk{text-decoration:line-through;color:var(--t5);}
+.dfoot{padding:8px 14px;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
+.dfi{font-size:10px;color:var(--t4);display:flex;align-items:center;gap:4px;}
+.dbtn{padding:4px 11px;border-radius:6px;border:1px solid var(--bd2);background:var(--s3);color:var(--t3);font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:4px;transition:all .13s;}
+.dbtn:hover,.dbtn.ok{background:var(--grna);border-color:rgba(34,197,94,.28);color:var(--grn);}
+.dbtn .mir{font-size:12px;}
+/* timetable */
+.ttr{display:grid;grid-template-columns:120px 1fr;border-bottom:1px solid var(--bd);}
+.ttr:last-child{border-bottom:none;}
+.tttime{padding:13px 14px;background:var(--s1);border-right:1px solid var(--bd);font-size:11px;font-weight:600;color:var(--t3);display:flex;align-items:center;gap:6px;}
+.tttime .mir{font-size:14px;}
+.ttcon{padding:13px 16px;font-size:12px;line-height:1.7;color:var(--t2);}
+.ttag{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:4px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-right:4px;}
+.ttag.th{background:var(--acc3);color:var(--acc2);}
+.ttag.mk{background:var(--mocka);color:var(--mock);}
+.ttag.an{background:rgba(6,182,212,.1);color:var(--cyan);}
+.ttag.br{background:var(--s5);color:var(--t4);}
+.ttag.mx{background:var(--matha);color:var(--math);}
+/* mock cards */
+.mkcard{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:15px;transition:border-color .15s,transform .2s,box-shadow .2s;display:flex;flex-direction:column;gap:9px;}
+.mkcard:hover{border-color:var(--bd3);transform:translateY(-2px);box-shadow:var(--sh);}
+.mkcard.dmk{border-color:rgba(34,197,94,.2);}
+.mktop{display:flex;align-items:center;justify-content:space-between;}
+.mknum{font-size:10px;font-weight:800;color:var(--mock);}
+.mkday{font-size:9.5px;color:var(--t4);margin-top:1px;}
+.mkchk{width:19px;height:19px;border-radius:5px;border:1.5px solid var(--bd2);background:transparent;cursor:pointer;appearance:none;-webkit-appearance:none;transition:all .14s;display:flex;align-items:center;justify-content:center;}
+.mkchk:checked{background:var(--grn);border-color:var(--grn);box-shadow:0 0 7px rgba(34,197,94,.4);}
+.mkchk:checked::after{content:'✓';color:#fff;font-size:11px;font-weight:800;font-family:'Poppins',sans-serif;}
+.mk-total{background:var(--s1);border:1px solid var(--bd2);border-radius:9px;padding:9px;text-align:center;}
+.mktotinp{width:100%;background:transparent;border:none;color:var(--t1);font-family:'Poppins',sans-serif;font-size:20px;font-weight:900;text-align:center;outline:none;}
+.mktotinp::placeholder{color:var(--t5);}
+.mklbl{font-size:9px;color:var(--t4);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:1px;}
+.mk-gauge{height:3px;background:var(--s5);border-radius:2px;margin-top:4px;overflow:hidden;}
+.mk-gf{height:100%;border-radius:2px;transition:width .4s;}
+.mk-subs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;}
+.mk-sb{background:var(--s1);border:1px solid var(--bd);border-radius:7px;padding:6px 5px;text-align:center;}
+.mk-si{width:100%;background:transparent;border:none;font-family:'Poppins',sans-serif;font-size:13px;font-weight:800;text-align:center;outline:none;}
+.mk-si.pi{color:var(--phy);}
+.mk-si.ci{color:var(--chem);}
+.mk-si.mi{color:var(--math);}
+.mk-si::placeholder{color:var(--t5);}
+.mk-sl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;margin-top:2px;}
+.mk-sl.pl{color:rgba(59,130,246,.6);}
+.mk-sl.cl{color:rgba(16,185,129,.6);}
+.mk-sl.ml{color:rgba(168,85,247,.6);}
+.mk-sbar{height:2px;background:var(--s5);border-radius:2px;margin-top:3px;overflow:hidden;}
+.mk-sbf{height:100%;border-radius:2px;transition:width .3s;}
+.mk-sbf.phy{background:var(--phy);}
+.mk-sbf.chem{background:var(--chem);}
+.mk-sbf.math{background:var(--math);}
+/* analytics */
+.acard{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:17px;}
+.atit{font-size:11.5px;font-weight:700;color:var(--t2);margin-bottom:12px;display:flex;align-items:center;gap:5px;}
+.atit .mir{font-size:14px;color:var(--t3);}
+.shl{display:flex;flex-direction:column;gap:5px;max-height:190px;overflow-y:auto;}
+.shr{display:flex;align-items:center;gap:7px;font-size:11px;}
+.shn{color:var(--t3);font-weight:600;min-width:55px;font-size:10px;}
+.sht{font-weight:800;min-width:34px;}
+.shbw{flex:1;height:3.5px;background:var(--s5);border-radius:2px;overflow:hidden;}
+.shbf{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--acc),var(--acc2));transition:width .4s;}
+.shg{font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:4px;}
+/* mock chart */
+.mcs{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:18px;margin-bottom:16px;}
+.bar-chart{display:flex;align-items:flex-end;gap:3px;height:80px;}
+.bcw{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;}
+.bcb{width:100%;border-radius:4px 4px 0 0;transition:all .4s cubic-bezier(.4,0,.2,1);min-height:3px;}
+.bcb:hover{filter:brightness(1.15);}
+.bcv{font-size:8.5px;font-weight:700;color:var(--t3);}
+.bcn{font-size:8px;color:var(--t4);font-weight:600;}
+.lc-svg{width:100%;overflow:visible;}
+.lc-line{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+/* tips */
+.tcard{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:15px;}
+.tcard h4{font-size:12px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:5px;}
+.tcard h4 .mir{font-size:14px;color:var(--t3);}
+.tl{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.tl li{font-size:11px;color:var(--t3);line-height:1.5;padding-left:11px;position:relative;}
+.tl li::before{content:'·';position:absolute;left:2px;color:var(--t4);font-size:14px;top:-2px;}
+.srb{font-size:24px;font-weight:900;line-height:1;}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;}
+/* logitem */
+.loginp{flex:1;background:var(--s2);border:1px solid var(--bd2);border-radius:8px;padding:8px 13px;color:var(--t1);font-family:'Poppins',sans-serif;font-size:12px;outline:none;transition:border-color .14s;}
+.loginp:focus{border-color:var(--acc);}
+.logitem{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:9px 13px;display:flex;align-items:center;justify-content:space-between;}
+.logt{font-size:9px;color:var(--t4);font-weight:700;}
+/* tbtn */
+.tbtn{padding:8px 16px;border-radius:8px;border:1px solid var(--bd2);background:var(--s2);color:var(--t1);font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .14s;}
+.tbtn:hover{background:var(--s3);}
+.tbtn.pri{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 0 12px rgba(99,102,241,.35);}
+.tbtn.pri:hover{background:var(--acc2);}
+.tbtn .mir{font-size:16px;}
+.pbtn{padding:5px 12px;border-radius:7px;border:1px solid var(--bd);background:var(--s3);color:var(--t2);font-family:'Poppins',sans-serif;font-size:10.5px;font-weight:600;cursor:pointer;transition:all .13s;}
+.pbtn:hover,.pbtn.on{background:var(--acc3);border-color:rgba(99,102,241,.3);color:var(--acc2);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* ── CALENDAR PAGE ── */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.cal-wrap{display:grid;grid-template-columns:230px 1fr 270px;height:100%;overflow:hidden;}
+
+/* left mini sidebar */
+.cal-left{border-right:1px solid var(--bd);display:flex;flex-direction:column;background:var(--s1);overflow-y:auto;}
+.cal-mini-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 12px 8px;}
+.calnav{background:none;border:1px solid var(--bd2);border-radius:6px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--t2);transition:all .13s;}
+.calnav:hover{background:var(--s3);color:var(--t1);}
+.calnav .mir{font-size:17px;}
+.cal-mini-grid{padding:0 10px 8px;}
+.cal-dow{display:inline-block;width:calc(100%/7);text-align:center;font-size:9.5px;font-weight:700;color:var(--t4);padding:3px 0;}
+.cal-mini-cells{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;}
+.cmc{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:6px;font-size:10.5px;font-weight:500;cursor:pointer;color:var(--t3);transition:all .12s;position:relative;}
+.cmc:hover{background:var(--s4);color:var(--t1);}
+.cmc.is-today{background:var(--acc);color:#fff;font-weight:800;}
+.cmc.is-sel:not(.is-today){background:var(--s4);color:var(--t1);font-weight:700;outline:1.5px solid var(--acc2);}
+.cmc.other{opacity:.3;}
+.cmc.has-dot::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:3.5px;height:3.5px;border-radius:50%;background:var(--acc2);}
+.cmc.dot-mock::after{background:var(--mock);}
+.cmc.dot-done::after{background:var(--grn);}
+.cal-legend{padding:12px;border-top:1px solid var(--bd);}
+.cal-legend-item{display:flex;align-items:center;gap:7px;font-size:10.5px;color:var(--t3);margin-bottom:6px;}
+.cal-legend-item:last-child{margin-bottom:0;}
+.cal-legend-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0;}
+
+/* main calendar area */
+.cal-main{display:flex;flex-direction:column;overflow:hidden;}
+.cal-topbar{height:50px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;padding:0 16px;flex-shrink:0;}
+.cal-today-btn{padding:5px 12px;border-radius:7px;border:1px solid var(--bd2);background:var(--s2);color:var(--t2);font-family:'Poppins',sans-serif;font-size:11.5px;font-weight:600;cursor:pointer;transition:all .13s;}
+.cal-today-btn:hover{background:var(--s3);color:var(--t1);}
+.cal-view-btns{display:flex;gap:2px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:3px;}
+.cvb{padding:4px 11px;border-radius:6px;border:none;background:transparent;color:var(--t3);font-family:'Poppins',sans-serif;font-size:10.5px;font-weight:600;cursor:pointer;transition:all .13s;}
+.cvb:hover{color:var(--t2);}
+.cvb.on{background:var(--s4);color:var(--t1);box-shadow:0 1px 3px rgba(0,0,0,.3);}
+.cal-week-lbl{font-size:14px;font-weight:700;}
+
+/* week header */
+.cal-week-head{display:grid;flex-shrink:0;border-bottom:1px solid var(--bd);background:var(--s1);}
+.cwh{padding:9px 6px;text-align:center;border-left:1px solid var(--bd);cursor:pointer;}
+.cwh:hover{background:rgba(255,255,255,.02);}
+.cwh-day{font-size:10px;font-weight:700;color:var(--t4);text-transform:uppercase;letter-spacing:.5px;}
+.cwh-num{font-size:18px;font-weight:800;margin-top:2px;line-height:1;}
+.today-circle{background:var(--acc);color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;margin:2px auto 0;font-size:14px;}
+.cwh-dot{width:5px;height:5px;border-radius:50%;margin:3px auto 0;}
+
+/* timeline scroll */
+.cal-scroll{flex:1;overflow-y:auto;overflow-x:hidden;position:relative;}
+.cal-scroll::-webkit-scrollbar{width:4px;}
+.cal-scroll::-webkit-scrollbar-thumb{background:var(--s5);border-radius:2px;}
+.cal-tgrid{position:relative;}
+.cal-time-col{position:absolute;left:0;top:0;width:50px;z-index:2;}
+.cal-time-lbl{height:60px;display:flex;align-items:flex-start;justify-content:flex-end;padding-right:7px;padding-top:0;font-size:9.5px;color:var(--t4);font-weight:600;white-space:nowrap;}
+.cal-cols{position:absolute;left:50px;right:0;top:0;bottom:0;display:grid;}
+.cal-col{border-right:1px solid var(--bd);position:relative;}
+.cal-col-hr{height:60px;border-bottom:1px solid rgba(255,255,255,.035);}
+.cal-col-hr.half{border-bottom-color:rgba(255,255,255,.015);}
+.now-line{position:absolute;left:0;right:0;height:2px;background:var(--red);z-index:20;pointer-events:none;}
+.now-line::before{content:'';position:absolute;left:-4px;top:-4px;width:9px;height:9px;border-radius:50%;background:var(--red);}
+
+/* events */
+.cal-ev{position:absolute;left:2px;right:2px;border-radius:6px;padding:3px 6px;cursor:pointer;z-index:5;overflow:hidden;transition:filter .14s,transform .14s;}
+.cal-ev:hover{filter:brightness(1.18);transform:scaleX(1.01);}
+.cal-ev-title{font-size:10.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cal-ev-sub{font-size:9px;opacity:.8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px;}
+.cal-ev.e-phy{background:rgba(59,130,246,.22);border-left:2.5px solid var(--phy);color:var(--phy2);}
+.cal-ev.e-chem{background:rgba(16,185,129,.22);border-left:2.5px solid var(--chem);color:var(--chem2);}
+.cal-ev.e-math{background:rgba(168,85,247,.22);border-left:2.5px solid var(--math);color:var(--math2);}
+.cal-ev.e-mock{background:rgba(245,158,11,.22);border-left:2.5px solid var(--mock);color:var(--mock2);}
+.cal-ev.e-break{background:rgba(255,255,255,.05);border-left:2.5px solid var(--t5);color:var(--t3);}
+.cal-ev.e-rev{background:rgba(234,179,8,.18);border-left:2.5px solid var(--yel);color:var(--yel);}
+.cal-ev.e-mixed{background:rgba(99,102,241,.18);border-left:2.5px solid var(--acc);color:var(--acc2);}
+.cal-ev.is-done{opacity:.45;}
+.cal-ev.is-done .cal-ev-title{text-decoration:line-through;}
+
+/* right detail panel */
+.cal-detail{background:var(--s1);border-left:1px solid var(--bd);overflow-y:auto;display:flex;flex-direction:column;}
+.cal-detail::-webkit-scrollbar{width:3px;}
+.cal-detail::-webkit-scrollbar-thumb{background:var(--s5);}
+.cdp{padding:16px;}
+.cdp-day{font-size:24px;font-weight:900;line-height:1;}
+.cdp-sub{font-size:11px;color:var(--t3);margin-top:3px;}
+.cdp-ch{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;margin-bottom:5px;cursor:pointer;transition:border-color .13s;}
+.cdp-ch:hover{border-color:var(--bd2);}
+.cdp-ev{display:flex;gap:9px;align-items:flex-start;padding:8px 9px;border-radius:8px;cursor:pointer;transition:background .13s;margin-bottom:3px;}
+.cdp-ev:hover{background:var(--s3);}
+.cdp-ev-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0;margin-top:3px;}
+.cdp-ev-title{font-size:11.5px;font-weight:600;}
+.cdp-ev-time{font-size:10px;color:var(--t3);margin-top:1px;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* ── TIMER/POMODORO PAGE ── */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.timer-wrap{display:grid;grid-template-columns:380px 1fr;height:100%;overflow:hidden;}
+.timer-left{border-right:1px solid var(--bd);display:flex;flex-direction:column;align-items:center;padding:22px 18px;overflow-y:auto;gap:14px;background:var(--s1);}
+.timer-left::-webkit-scrollbar{width:3px;}
+.timer-right{padding:22px;overflow-y:auto;display:flex;flex-direction:column;gap:14px;}
+.timer-right::-webkit-scrollbar{width:4px;}
+.timer-right::-webkit-scrollbar-thumb{background:var(--s5);border-radius:2px;}
+
+/* mode tabs */
+.pomo-tabs{display:flex;gap:3px;background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:3px;width:100%;}
+.pomo-tab{flex:1;padding:6px 4px;border-radius:7px;border:none;background:transparent;color:var(--t3);font-family:'Poppins',sans-serif;font-size:10px;font-weight:600;cursor:pointer;transition:all .13s;white-space:nowrap;}
+.pomo-tab:hover{color:var(--t2);}
+.pomo-tab.on{background:var(--s4);color:var(--t1);box-shadow:0 1px 4px rgba(0,0,0,.35);}
+
+/* ring */
+.pring-wrap{position:relative;width:220px;height:220px;flex-shrink:0;}
+.pring-svg{width:220px;height:220px;filter:drop-shadow(0 0 16px rgba(99,102,241,.18));}
+.pring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.pring-time{font-size:44px;font-weight:900;letter-spacing:-2px;line-height:1;font-variant-numeric:tabular-nums;}
+.pring-lbl{font-size:11px;color:var(--t3);font-weight:600;margin-top:4px;}
+.pring-sess{font-size:10px;color:var(--t4);margin-top:2px;}
+
+/* controls */
+.pomo-ctrls{display:flex;align-items:center;gap:14px;}
+.pcbtn{border:none;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.pcbtn.main{width:58px;height:58px;background:var(--acc);color:#fff;box-shadow:0 0 18px rgba(99,102,241,.4);}
+.pcbtn.main:hover{background:var(--acc2);transform:scale(1.05);}
+.pcbtn.main .mir{font-size:26px;}
+.pcbtn.side{width:40px;height:40px;background:var(--s3);border:1px solid var(--bd2);color:var(--t3);}
+.pcbtn.side:hover{background:var(--s4);color:var(--t1);}
+.pcbtn.side .mir{font-size:18px;}
+
+/* dots */
+.pomo-dots{display:flex;gap:7px;justify-content:center;}
+.pdot{width:11px;height:11px;border-radius:50%;background:var(--s5);border:1.5px solid var(--bd2);transition:all .2s;}
+.pdot.done{background:var(--acc);border-color:var(--acc);box-shadow:0 0 6px rgba(99,102,241,.5);}
+.pdot.active{background:transparent;border-color:var(--acc2);animation:pdot-pulse 1.5s infinite;}
+@keyframes pdot-pulse{0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,.4);}50%{box-shadow:0 0 0 5px rgba(99,102,241,0);}}
+
+/* stats row */
+.pomo-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;width:100%;}
+.pomo-stat{background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:12px 8px;text-align:center;}
+.pomo-stat-val{font-size:20px;font-weight:900;line-height:1;}
+.pomo-stat-lbl{font-size:9px;color:var(--t3);font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-top:3px;}
+
+/* custom presets */
+.pomo-presets{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:13px;width:100%;}
+.pp-lbl{font-size:9.5px;color:var(--t4);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+
+/* stopwatch panel */
+.sw-panel{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:16px;display:none;}
+.sw-time{font-size:40px;font-weight:900;letter-spacing:-2px;text-align:center;font-variant-numeric:tabular-nums;margin-bottom:12px;}
+.sw-laps{margin-top:10px;display:flex;flex-direction:column;gap:4px;max-height:110px;overflow-y:auto;}
+
+/* right panel cards */
+.tr-card{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:16px;}
+.tr-card-title{font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:12px;color:var(--t1);}
+.tr-card-title .mir{font-size:15px;color:var(--t3);}
+.tch-item{display:flex;align-items:center;gap:8px;padding:7px 9px;background:var(--s3);border:1px solid var(--bd);border-radius:8px;cursor:pointer;transition:all .13s;margin-bottom:5px;}
+.tch-item:hover{border-color:var(--bd2);}
+.tch-item:last-child{margin-bottom:0;}
+.tch-name{flex:1;font-size:11.5px;font-weight:500;color:var(--t2);}
+.tch-st{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;}
+
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--s5);border-radius:2px;}
+
+@media(max-width:1200px){
+  .g5{grid-template-columns:repeat(3,1fr);}
+  .hero-progress{grid-template-columns:1fr;}
+  .cal-wrap{grid-template-columns:200px 1fr 240px;}
+  .timer-wrap{grid-template-columns:340px 1fr;}
+}
+@media(max-width:900px){
+  #sb{display:none;}
+  #main{margin-left:0;}
+  .cal-wrap{grid-template-columns:1fr;}
+  .timer-wrap{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav id="sb">
+  <div class="sb-logo">
+    <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+      <path d="M18 3L32 10.5V25.5L18 33L4 25.5V10.5L18 3Z" fill="url(#cg1)" opacity="0.12"/>
+      <path d="M18 3L32 10.5V25.5L18 33L4 25.5V10.5L18 3Z" stroke="url(#cg2)" stroke-width="1.3"/>
+      <path d="M4 10.5L18 18L32 10.5" stroke="url(#cg2)" stroke-width=".8" opacity=".5"/>
+      <path d="M18 18V33" stroke="url(#cg2)" stroke-width=".8" opacity=".4"/>
+      <path d="M18 3L4 10.5L18 18L32 10.5L18 3Z" fill="url(#cg1)" opacity=".22"/>
+      <circle cx="18" cy="18" r="2.2" fill="var(--acc2)" opacity=".7"/>
+      <defs>
+        <linearGradient id="cg1" x1="4" y1="3" x2="32" y2="33"><stop stop-color="#818cf8"/><stop offset="1" stop-color="#c084fc"/></linearGradient>
+        <linearGradient id="cg2" x1="4" y1="3" x2="32" y2="33"><stop stop-color="#818cf8"/><stop offset="1" stop-color="#e879f9"/></linearGradient>
+      </defs>
+    </svg>
+    <div><div class="logo-name">AVAKINI</div><div class="logo-sub">JEE Mains 2026</div></div>
+  </div>
+  <div class="nav">
+    <button class="ni on" onclick="go('overview',this)"><span class="mir material-icons-round">dashboard</span>Overview</button>
+    <button class="ni" onclick="go('timetable',this)"><span class="mir material-icons-round">schedule</span>Timetable</button>
+    <button class="ni" onclick="go('plan',this)"><span class="mir material-icons-round">event_note</span>23-Day Plan<span class="nbadge live" id="nb-day">D1</span></button>
+    <button class="ni" onclick="go('chapters',this)"><span class="mir material-icons-round">menu_book</span>Chapters<span class="nbadge" id="nb-ch">0/30</span></button>
+    <button class="ni" onclick="go('mocks',this)"><span class="mir material-icons-round">assignment</span>Mock Tests<span class="nbadge" id="nb-mk">0/20</span></button>
+    <button class="ni" onclick="go('analytics',this)"><span class="mir material-icons-round">bar_chart</span>Analytics</button>
+    <button class="ni" onclick="go('calendar',this)"><span class="mir material-icons-round">calendar_month</span>Calendar</button>
+    <button class="ni" onclick="go('timer',this)"><span class="mir material-icons-round">timer</span>Focus Timer</button>
+  </div>
+  <div class="sb-foot">
+    <div class="dc-box">
+      <div class="dc-l">Current Day</div>
+      <div class="dc-v" id="dcv">—</div>
+      <div class="dc-s" id="dcs">of 23 days</div>
+      <div class="dc-bar"><div class="dc-fill" id="dcf" style="width:0%"></div></div>
+    </div>
+  </div>
+</nav>
+
+<div id="main">
+  <div class="topbar">
+    <div><div class="tb-title" id="tbt">Overview</div><div class="tb-sub">JEE Mains 2026 · Session 2 · April 2026</div></div>
+    <div class="pills">
+      <div class="pill g"><span class="mir material-icons-round">check_circle</span><span id="tp1">0/30</span></div>
+      <div class="pill o"><span class="mir material-icons-round">assignment</span><span id="tp2">0/20 Mocks</span></div>
+      <div class="pill p"><span class="mir material-icons-round">trending_up</span><span id="tp3">Avg —</span></div>
+    </div>
+  </div>
+
+  <div class="pages">
+
+  <!-- ══ OVERVIEW ══ -->
+  <div class="page on padded" id="pg-overview">
+    <div class="hero-progress">
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="big-ring-card">
+          <div class="big-ring">
+            <svg viewBox="0 0 104 104" width="104" height="104"><circle class="sc-ri" cx="52" cy="52" r="44" stroke="rgba(255,255,255,0.05)"/><circle id="brf" class="sc-rf" cx="52" cy="52" r="44" stroke="url(#bGrad)" stroke-dasharray="276" stroke-dashoffset="276"/><defs><linearGradient id="bGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="var(--acc)"/><stop offset="50%" stop-color="var(--acc2)"/><stop offset="100%" stop-color="var(--math2)"/></linearGradient></defs></svg>
+            <div class="big-ring-center"><div class="brc-val" id="brpct">0%</div><div class="brc-lbl">Done</div></div>
+          </div>
+          <div>
+            <div class="bri-title">Overall Progress</div>
+            <div class="bri-sub" id="brsub">Start studying to track progress!</div>
+            <div class="bri-stats">
+              <div><div class="bri-sv" id="brc" style="color:var(--grn)">0</div><div class="bri-sl">Chapters</div></div>
+              <div><div class="bri-sv" id="brm" style="color:var(--mock)">0</div><div class="bri-sl">Mocks</div></div>
+              <div><div class="bri-sv" id="brd" style="color:var(--acc2)">—</div><div class="bri-sl">Day</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="g5">
+          <div class="sc phy"><div class="sc-top"><div><div class="sc-lbl">Physics</div><div class="sc-val" id="ov1">0/10</div><div class="sc-sub">done</div></div><div class="sc-ring"><svg viewBox="0 0 46 46" width="46" height="46"><circle class="sc-ri" cx="23" cy="23" r="17" stroke="rgba(59,130,246,.15)"/><circle id="rp" class="sc-rf" cx="23" cy="23" r="17" stroke="var(--phy)" stroke-dasharray="107" stroke-dashoffset="107"/></svg><div class="sc-icon"><span class="mir material-icons-round" style="color:var(--phy);font-size:15px">science</span></div></div></div><div class="sc-bar"><div class="sc-barf phy" id="pb1" style="width:0%"></div></div></div>
+          <div class="sc chem"><div class="sc-top"><div><div class="sc-lbl">Chemistry</div><div class="sc-val" id="ov2">0/10</div><div class="sc-sub">done</div></div><div class="sc-ring"><svg viewBox="0 0 46 46" width="46" height="46"><circle class="sc-ri" cx="23" cy="23" r="17" stroke="rgba(16,185,129,.15)"/><circle id="rc" class="sc-rf" cx="23" cy="23" r="17" stroke="var(--chem)" stroke-dasharray="107" stroke-dashoffset="107"/></svg><div class="sc-icon"><span class="mir material-icons-round" style="color:var(--chem);font-size:15px">biotech</span></div></div></div><div class="sc-bar"><div class="sc-barf chem" id="pb2" style="width:0%"></div></div></div>
+          <div class="sc math"><div class="sc-top"><div><div class="sc-lbl">Maths</div><div class="sc-val" id="ov3">0/10</div><div class="sc-sub">done</div></div><div class="sc-ring"><svg viewBox="0 0 46 46" width="46" height="46"><circle class="sc-ri" cx="23" cy="23" r="17" stroke="rgba(168,85,247,.15)"/><circle id="rm" class="sc-rf" cx="23" cy="23" r="17" stroke="var(--math)" stroke-dasharray="107" stroke-dashoffset="107"/></svg><div class="sc-icon"><span class="mir material-icons-round" style="color:var(--math);font-size:15px">functions</span></div></div></div><div class="sc-bar"><div class="sc-barf math" id="pb3" style="width:0%"></div></div></div>
+          <div class="sc mock"><div class="sc-top"><div><div class="sc-lbl">Mocks</div><div class="sc-val" id="ov4">0/20</div><div class="sc-sub">done</div></div><div class="sc-ring"><svg viewBox="0 0 46 46" width="46" height="46"><circle class="sc-ri" cx="23" cy="23" r="17" stroke="rgba(245,158,11,.15)"/><circle id="rmo" class="sc-rf" cx="23" cy="23" r="17" stroke="var(--mock)" stroke-dasharray="107" stroke-dashoffset="107"/></svg><div class="sc-icon"><span class="mir material-icons-round" style="color:var(--mock);font-size:15px">assignment</span></div></div></div><div class="sc-bar"><div class="sc-barf mock" id="pb4" style="width:0%"></div></div></div>
+          <div class="sc acc"><div class="sc-top"><div><div class="sc-lbl">Overall</div><div class="sc-val" id="ov5">0%</div><div class="sc-sub">complete</div></div><div class="sc-ring"><svg viewBox="0 0 46 46" width="46" height="46"><circle class="sc-ri" cx="23" cy="23" r="17" stroke="rgba(99,102,241,.15)"/><circle id="ra" class="sc-rf" cx="23" cy="23" r="17" stroke="url(#aGrad)" stroke-dasharray="107" stroke-dashoffset="107"/><defs><linearGradient id="aGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="var(--acc)"/><stop offset="100%" stop-color="var(--acc2)"/></linearGradient></defs></svg><div class="sc-icon"><span class="mir material-icons-round" style="color:var(--acc2);font-size:15px">bolt</span></div></div></div><div class="sc-bar"><div class="sc-barf acc" id="pb5" style="width:0%"></div></div></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="sub-bars-card">
+          <div class="sh" style="margin-bottom:12px;"><div class="st" style="font-size:12px;"><span class="mir material-icons-round">stacked_bar_chart</span>Subject Breakdown</div></div>
+          <div class="sbr"><div class="sbi phy"><span class="mir material-icons-round">science</span></div><div class="sbinfo"><div class="sbtop"><span class="sbname">Physics</span><span class="sbval" id="sbv1" style="color:var(--phy)">0/10</span></div><div class="sbtrack"><div class="sbfill phy" id="sbf1" style="width:0%"></div></div></div></div>
+          <div class="sbr"><div class="sbi chem"><span class="mir material-icons-round">biotech</span></div><div class="sbinfo"><div class="sbtop"><span class="sbname">Chemistry</span><span class="sbval" id="sbv2" style="color:var(--chem)">0/10</span></div><div class="sbtrack"><div class="sbfill chem" id="sbf2" style="width:0%"></div></div></div></div>
+          <div class="sbr"><div class="sbi math" style="background:var(--matha);"><span class="mir material-icons-round" style="color:var(--math)">functions</span></div><div class="sbinfo"><div class="sbtop"><span class="sbname">Maths</span><span class="sbval" id="sbv3" style="color:var(--math)">0/10</span></div><div class="sbtrack"><div class="sbfill math" id="sbf3" style="width:0%"></div></div></div></div>
+          <div class="sbr" style="margin-bottom:0;"><div class="sbi mock"><span class="mir material-icons-round">assignment</span></div><div class="sbinfo"><div class="sbtop"><span class="sbname">Mocks</span><span class="sbval" id="sbv4" style="color:var(--mock)">0/20</span></div><div class="sbtrack"><div class="sbfill mock" id="sbf4" style="width:0%"></div></div></div></div>
+        </div>
+        <div class="heatmap-card">
+          <div class="sh" style="margin-bottom:0;"><div class="st" style="font-size:12px;"><span class="mir material-icons-round">grid_view</span>23-Day Heatmap</div></div>
+          <div class="hm-grid" id="hmg"></div>
+          <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;" id="hm-key">
+            <div style="display:flex;align-items:center;gap:4px;font-size:9.5px;color:var(--t4);"><div style="width:8px;height:8px;border-radius:2px;background:var(--grn)"></div>Done</div>
+            <div style="display:flex;align-items:center;gap:4px;font-size:9.5px;color:var(--t4);"><div style="width:8px;height:8px;border-radius:2px;background:var(--acc2)"></div>Today</div>
+            <div style="display:flex;align-items:center;gap:4px;font-size:9.5px;color:var(--t4);"><div style="width:8px;height:8px;border-radius:2px;background:rgba(245,158,11,.3)"></div>Mock</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sh"><div class="st"><span class="mir material-icons-round">bolt</span>Today's Mission</div><div class="ss" id="tdate"></div></div>
+    <div id="tfz"></div>
+    <div class="div"></div>
+    <div class="sh"><div class="st"><span class="mir material-icons-round">emoji_events</span>Expected Scores — HWT Chapters</div></div>
+    <div class="tgrid">
+      <div class="tcard"><h4><span class="mir material-icons-round">science</span>Physics</h4><div class="srb" style="color:var(--phy)">56–76</div><div style="font-size:10px;color:var(--t4);margin-top:3px">marks · ~1-2 Qs/shift</div></div>
+      <div class="tcard"><h4><span class="mir material-icons-round">biotech</span>Chemistry</h4><div class="srb" style="color:var(--chem)">40–80</div><div style="font-size:10px;color:var(--t4);margin-top:3px">Coord. Compounds ~3-4 Qs</div></div>
+      <div class="tcard"><h4><span class="mir material-icons-round">functions</span>Mathematics</h4><div class="srb" style="color:var(--math)">28–60</div><div style="font-size:10px;color:var(--t4);margin-top:3px">Vectors & 3D Geometry key</div></div>
+      <div class="tcard"><h4><span class="mir material-icons-round">workspace_premium</span>Total Target</h4><div class="srb" style="color:var(--acc2)">128–200</div><div style="font-size:10px;color:var(--t4);margin-top:3px">from 30 HWT chapters</div></div>
+    </div>
+  </div>
+
+  <!-- ══ TIMETABLE ══ -->
+  <div class="page padded" id="pg-timetable">
+    <div class="sh"><div class="st"><span class="mir material-icons-round">wb_sunny</span>Daily 12-Hour Schedule</div><div class="ss">9:00 AM → 3:00 AM</div></div>
+    <div style="background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;margin-bottom:18px;">
+      <div class="ttr"><div class="tttime"><span class="mir material-icons-round">wb_sunny</span>9:00–10:30</div><div class="ttcon"><span class="ttag th">Theory</span>Pick 1 HWT chapter → revise theory, key formulas, reactions</div></div>
+      <div class="ttr"><div class="tttime"><span class="mir material-icons-round">coffee</span>10:30–11:00</div><div class="ttcon"><span class="ttag br">Break</span>Breakfast + short walk. No screens.</div></div>
+      <div class="ttr"><div class="tttime"><span class="mir material-icons-round">edit_note</span>11:00–2:00</div><div class="ttcon"><span class="ttag th">Solve</span>20–30 PYQs + advanced questions from morning chapter</div></div>
+      <div class="ttr"><div class="tttime"><span class="mir material-icons-round">lunch_dining</span>2:00–3:00</div><div class="ttcon"><span class="ttag br">Break</span>Lunch + 20-min rest.</div></div>
+      <div class="ttr"><div class="tttime"><span class="mir material-icons-round">menu_book</span>3:00–6:00</div><div class="ttcon"><b style="color:var(--t1)">Days 1–15:</b> <span class="ttag th">Study</span>2nd chapter &nbsp;|&nbsp; <b style="color:var(--t1)">Day 16:</b> <span class="ttag th">Revision</span>&nbsp;|&nbsp; <b style="color:var(--t1)">Days 17–23:</b> <span class="ttag mk">Full Mock</span>180 min</div></div>
+      <div class="ttr"><div class="tttime"><span class="mir material-icons-round">fastfood</span>6:00–6:30</div><div class="ttcon"><span class="ttag br">Break</span>Evening snacks + 15 min walk</div></div>
+      <div class="ttr"><div class="tttime"><span class="mir material-icons-round">analytics</span>6:30–9:30</div><div class="ttcon"><b style="color:var(--t1)">Days 1–16:</b> <span class="ttag th">Study</span>3rd chapter / PYQs &nbsp;|&nbsp; <b style="color:var(--t1)">Days 17–23:</b> <span class="ttag an">Deep Analysis</span>every wrong Q</div></div>
+      <div class="ttr"><div class="tttime"><span class="mir material-icons-round">dinner_dining</span>9:30–10:00</div><div class="ttcon"><span class="ttag br">Break</span>Dinner</div></div>
+      <div class="ttr"><div class="tttime"><span class="mir material-icons-round">nightlight</span>10:00–1:00</div><div class="ttcon"><b style="color:var(--t1)">Days 1–16:</b> <span class="ttag mx">Mixed</span>20–30 Mixed PCM &nbsp;|&nbsp; <b style="color:var(--t1)">Days 17–23:</b> <span class="ttag mx">Part Test</span>30-Q subject test</div></div>
+      <div class="ttr" style="border:none;"><div class="tttime"><span class="mir material-icons-round">auto_stories</span>1:00–3:00</div><div class="ttcon"><span class="ttag an">Review</span>Error log → weak topics → wind down → sleep 3 AM</div></div>
+    </div>
+    <div class="sh"><div class="st"><span class="mir material-icons-round">tips_and_updates</span>Strategy Notes</div></div>
+    <div class="tgrid">
+      <div class="tcard"><h4><span class="mir material-icons-round">local_fire_department</span>HWT Priority</h4><ul class="tl"><li>Mole Concept → Stoichiometry</li><li>Solutions → Colligative props</li><li>Coordination Compounds</li><li>Equilibrium + Kinetics</li><li>Vectors, 3D, Matrices</li><li>P Block & d-f Block</li></ul></div>
+      <div class="tcard"><h4><span class="mir material-icons-round">psychology</span>Mock Protocol</h4><ul class="tl"><li>Attempt like real JEE — no pausing</li><li>30-min quick error review after</li><li>Classify: concept / silly / time</li><li>Keep physical error log</li><li>Track accuracy % per subject</li></ul></div>
+      <div class="tcard"><h4><span class="mir material-icons-round">speed</span>Speed Goals</h4><ul class="tl"><li>Physics: 1Q per 2.5 min</li><li>Chemistry: finish in 50 min</li><li>Maths: skip if stuck >3 min</li><li>Target 160+ by Day 20</li></ul></div>
+    </div>
+  </div>
+
+  <!-- ══ 23-DAY PLAN ══ -->
+  <div class="page padded" id="pg-plan">
+    <div class="frow" id="pf">
+      <button class="fb on" onclick="fp('all',this)">All Days</button>
+      <button class="fb" onclick="fp('P',this)"><span class="dot" style="background:var(--phy)"></span>Physics</button>
+      <button class="fb" onclick="fp('C',this)"><span class="dot" style="background:var(--chem)"></span>Chemistry</button>
+      <button class="fb" onclick="fp('M',this)"><span class="dot" style="background:var(--math)"></span>Maths</button>
+      <button class="fb" onclick="fp('mock',this)"><span class="dot" style="background:var(--mock)"></span>Mocks</button>
+      <button class="fb" onclick="fp('done',this)"><span class="dot" style="background:var(--grn)"></span>Done</button>
+      <button class="fb" onclick="fp('pending',this)"><span class="dot" style="background:var(--t4)"></span>Pending</button>
+    </div>
+    <div class="ga" id="dg"></div>
+  </div>
+
+  <!-- ══ CHAPTERS ══ -->
+  <div class="page padded" id="pg-chapters">
+    <div class="frow" id="cf">
+      <button class="fb on" onclick="fc('all',this)">All 30</button>
+      <button class="fb" onclick="fc('P',this)"><span class="dot" style="background:var(--phy)"></span>Physics</button>
+      <button class="fb" onclick="fc('C',this)"><span class="dot" style="background:var(--chem)"></span>Chemistry</button>
+      <button class="fb" onclick="fc('M',this)"><span class="dot" style="background:var(--math)"></span>Maths</button>
+      <button class="fb" onclick="fc('pending',this)">Pending</button>
+      <button class="fb" onclick="fc('in-progress',this)">In Progress</button>
+      <button class="fb" onclick="fc('done',this)">Done ✅</button>
+    </div>
+    <div class="tw"><table class="tb"><thead><tr><th>#</th><th>Sub</th><th>Chapter</th><th>Day</th><th>Priority</th><th>Qs/Shift</th><th>Status</th></tr></thead><tbody id="ctb"></tbody></table></div>
+  </div>
+
+  <!-- ══ MOCKS ══ -->
+  <div class="page padded" id="pg-mocks">
+    <div class="mcs" id="mock-chart">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;">
+        <div><div style="font-size:13px;font-weight:700;">Score Progress</div><div style="font-size:11px;color:var(--t3);margin-top:2px;">All 20 mocks</div></div>
+        <div style="text-align:right;"><div style="font-size:20px;font-weight:900;" id="mcs-avg">—</div><div style="font-size:10px;color:var(--t3);">Average /300</div></div>
+      </div>
+      <svg id="mls" class="lc-svg" height="70" viewBox="0 0 600 70" preserveAspectRatio="none" style="margin-bottom:10px;"></svg>
+      <div class="bar-chart" id="mbc"></div>
+      <div style="display:flex;gap:12px;margin-top:10px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--t3);"><div style="width:9px;height:9px;border-radius:2px;background:var(--grn)"></div>≥200</div>
+        <div style="display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--t3);"><div style="width:9px;height:9px;border-radius:2px;background:var(--mock)"></div>150–199</div>
+        <div style="display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--t3);"><div style="width:9px;height:9px;border-radius:2px;background:var(--red)"></div>&lt;150</div>
+        <div style="margin-left:auto;font-size:10px;color:var(--t4);" id="mcs-best"></div>
+      </div>
+      <div class="g3" style="margin-top:14px;" id="sub-sparks"></div>
+    </div>
+    <div style="background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.14);border-radius:var(--r);padding:10px 14px;margin-bottom:14px;display:flex;align-items:center;gap:8px;font-size:11px;color:var(--t2);"><span class="mir material-icons-round" style="color:var(--mock);font-size:16px;">info</span>Mocks on <b style="color:var(--mock)">Days 17–23</b> · 3/day. Enter scores — chart updates live.</div>
+    <div class="gams" id="mg"></div>
+  </div>
+
+  <!-- ══ ANALYTICS ══ -->
+  <div class="page padded" id="pg-analytics">
+    <div class="sh"><div class="st"><span class="mir material-icons-round">bar_chart</span>Mock Score Analytics</div></div>
+    <div class="g4" style="margin-bottom:14px;" id="anas"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" id="anac">
+      <div class="acard"><div class="atit"><span class="mir material-icons-round">show_chart</span>Score Trend</div><svg id="ana-svg" class="lc-svg" height="72" viewBox="0 0 400 72" preserveAspectRatio="none"></svg><div style="display:flex;justify-content:space-between;margin-top:5px;" id="ana-trl"></div></div>
+      <div class="acard"><div class="atit"><span class="mir material-icons-round">history</span>All Scores</div><div class="shl" id="sh"></div></div>
+      <div class="acard"><div class="atit"><span class="mir material-icons-round">equalizer</span>Subject Averages</div><div id="sac"></div></div>
+      <div class="acard"><div class="atit"><span class="mir material-icons-round">workspace_premium</span>Performance Grade</div><div id="pg2"></div></div>
+    </div>
+  </div>
+
+  <!-- ══ CALENDAR ══ -->
+  <div class="page fullh" id="pg-calendar">
+    <div class="cal-wrap">
+      <!-- mini sidebar -->
+      <div class="cal-left">
+        <div class="cal-mini-hdr">
+          <button class="calnav" onclick="calPrevMonth()"><span class="mir material-icons-round">chevron_left</span></button>
+          <span id="cal-mlbl" style="font-size:12.5px;font-weight:700;"></span>
+          <button class="calnav" onclick="calNextMonth()"><span class="mir material-icons-round">chevron_right</span></button>
+        </div>
+        <div class="cal-mini-grid">
+          <div class="cal-dow">S</div><div class="cal-dow">M</div><div class="cal-dow">T</div><div class="cal-dow">W</div><div class="cal-dow">T</div><div class="cal-dow">F</div><div class="cal-dow">S</div>
+          <div class="cal-mini-cells" id="cal-cells"></div>
+        </div>
+        <div class="cal-legend">
+          <div style="font-size:9.5px;color:var(--t4);font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;">Legend</div>
+          <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--phy)"></div>Physics study</div>
+          <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--chem)"></div>Chemistry study</div>
+          <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--math)"></div>Maths study</div>
+          <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--mock)"></div>Mock test day</div>
+          <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--yel)"></div>Revision day</div>
+          <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--grn)"></div>Completed ✓</div>
+          <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--red)"></div>Now line</div>
+        </div>
+      </div>
+      <!-- main timeline -->
+      <div class="cal-main">
+        <div class="cal-topbar">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <button class="calnav" onclick="calPrevWeek()"><span class="mir material-icons-round">chevron_left</span></button>
+            <button class="cal-today-btn" onclick="calGoToday()">Today</button>
+            <button class="calnav" onclick="calNextWeek()"><span class="mir material-icons-round">chevron_right</span></button>
+            <span class="cal-week-lbl" id="cal-wlbl"></span>
+          </div>
+          <div class="cal-view-btns">
+            <button class="cvb on" id="cvb-week" onclick="setCalView('week',this)">Week</button>
+            <button class="cvb" id="cvb-day" onclick="setCalView('day',this)">Day</button>
+          </div>
+        </div>
+        <div class="cal-week-head" id="cal-whead"></div>
+        <div class="cal-scroll" id="cal-scroll">
+          <div class="cal-tgrid" id="cal-tgrid"></div>
+        </div>
+      </div>
+      <!-- detail panel -->
+      <div class="cal-detail" id="cal-detail">
+        <div class="cdp"><div class="empty"><span class="mir material-icons-round" style="color:var(--t4)">touch_app</span>Click a day to see details</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TIMER ══ -->
+  <div class="page fullh" id="pg-timer">
+    <div class="timer-wrap">
+      <!-- Pomodoro left panel -->
+      <div class="timer-left">
+        <!-- mode tabs -->
+        <div class="pomo-tabs">
+          <button class="pomo-tab on" id="ptab-pomo" onclick="setPomoMode('pomo',this)">Pomodoro</button>
+          <button class="pomo-tab" id="ptab-short" onclick="setPomoMode('short',this)">Short Break</button>
+          <button class="pomo-tab" id="ptab-long" onclick="setPomoMode('long',this)">Long Break</button>
+          <button class="pomo-tab" id="ptab-sw" onclick="setPomoMode('sw',this)">Stopwatch</button>
+        </div>
+
+        <!-- ring timer -->
+        <div class="pring-wrap" id="pring-wrap">
+          <svg class="pring-svg" viewBox="0 0 220 220">
+            <circle cx="110" cy="110" r="96" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="9"/>
+            <circle id="pring" cx="110" cy="110" r="96" fill="none" stroke-width="9" stroke-linecap="round"
+              stroke-dasharray="603.19" stroke-dashoffset="0"
+              transform="rotate(-90 110 110)" style="transition:stroke-dashoffset 1s linear,stroke .4s;stroke:var(--acc2);"/>
+          </svg>
+          <div class="pring-center">
+            <div class="pring-time" id="ptime">25:00</div>
+            <div class="pring-lbl" id="plbl">Focus Time</div>
+            <div class="pring-sess" id="psess">Session 1 of 4</div>
+          </div>
+        </div>
+
+        <!-- controls -->
+        <div class="pomo-ctrls">
+          <button class="pcbtn side" onclick="pomoSkip()" title="Skip"><span class="mir material-icons-round">skip_next</span></button>
+          <button class="pcbtn main" id="pmain" onclick="pomoToggle()"><span class="mir material-icons-round" id="pmain-icon">play_arrow</span></button>
+          <button class="pcbtn side" onclick="pomoReset()" title="Reset"><span class="mir material-icons-round">refresh</span></button>
+        </div>
+
+        <!-- session dots -->
+        <div class="pomo-dots" id="pdots"></div>
+
+        <!-- presets -->
+        <div class="pomo-presets">
+          <div class="pp-lbl">Custom Focus Duration</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;">
+            <button class="pbtn" onclick="setCustomDur(15)">15m</button>
+            <button class="pbtn on" onclick="setCustomDur(25)">25m</button>
+            <button class="pbtn" onclick="setCustomDur(45)">45m</button>
+            <button class="pbtn" onclick="setCustomDur(60)">60m</button>
+            <button class="pbtn" onclick="setCustomDur(90)">90m</button>
+          </div>
+        </div>
+
+        <!-- stats -->
+        <div class="pomo-stats">
+          <div class="pomo-stat"><div class="pomo-stat-val" id="pstat-mins" style="color:var(--grn)">0m</div><div class="pomo-stat-lbl">Focus Today</div></div>
+          <div class="pomo-stat"><div class="pomo-stat-val" id="pstat-sess" style="color:var(--acc2)">0</div><div class="pomo-stat-lbl">Sessions</div></div>
+          <div class="pomo-stat"><div class="pomo-stat-val" id="pstat-streak" style="color:var(--mock)">0🔥</div><div class="pomo-stat-lbl">Day Streak</div></div>
+        </div>
+
+        <!-- stopwatch (hidden by default) -->
+        <div class="sw-panel" id="sw-panel">
+          <div class="sw-time" id="sw-disp">00:00:00</div>
+          <div style="display:flex;gap:8px;justify-content:center;">
+            <button class="tbtn pri" id="sw-btn" onclick="swToggle()"><span class="mir material-icons-round">play_arrow</span>Start</button>
+            <button class="tbtn" onclick="swLap()"><span class="mir material-icons-round">flag</span>Lap</button>
+            <button class="tbtn" onclick="swReset()"><span class="mir material-icons-round">refresh</span>Reset</button>
+          </div>
+          <div class="sw-laps" id="sw-laps"></div>
+        </div>
+      </div>
+
+      <!-- right panel -->
+      <div class="timer-right">
+        <!-- today chapters -->
+        <div class="tr-card">
+          <div class="tr-card-title"><span class="mir material-icons-round">menu_book</span>Today's Chapters <span style="font-size:9.5px;color:var(--t4);margin-left:auto;font-weight:500;">Click to cycle status</span></div>
+          <div id="tch-list"></div>
+        </div>
+        <!-- study log -->
+        <div class="tr-card">
+          <div class="tr-card-title"><span class="mir material-icons-round">notes</span>Study Log</div>
+          <div style="display:flex;gap:7px;margin-bottom:10px;">
+            <input class="loginp" id="li" placeholder="Log what you studied, e.g. Current Electricity PYQs ✅" onkeydown="if(event.key==='Enter')addLog()">
+            <button class="tbtn pri" onclick="addLog()"><span class="mir material-icons-round">add</span>Log</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:5px;max-height:280px;overflow-y:auto;" id="ll"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /pages -->
+</div><!-- /main -->
+
+<script>
+// ════════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════════
+const START_DATE = new Date('2026-03-08');
+
+const CHS=[
+  {id:'P1',s:'P',n:'Current Electricity',d:1,p:'H',q:'~1-2'},
+  {id:'P2',s:'P',n:'Electrostatics & Capacitance',d:2,p:'H',q:'~1-2'},
+  {id:'P3',s:'P',n:'Ray Optics',d:3,p:'H',q:'~1-2'},
+  {id:'P4',s:'P',n:'Thermodynamics (Phy)',d:4,p:'H',q:'~1-2'},
+  {id:'P5',s:'P',n:'Semiconductors & Communication',d:5,p:'M',q:'~1-2'},
+  {id:'P6',s:'P',n:'Atoms and Nuclei',d:6,p:'M',q:'~1'},
+  {id:'P7',s:'P',n:'Gravitation',d:7,p:'M',q:'~1'},
+  {id:'P8',s:'P',n:'Dual Nature of Matter',d:8,p:'M',q:'~1'},
+  {id:'P9',s:'P',n:'Kinetic Theory of Gases',d:9,p:'L',q:'~0-1'},
+  {id:'P10',s:'P',n:'Rotational Motion',d:10,p:'M',q:'~0-1'},
+  {id:'C1',s:'C',n:'Coordination Compounds',d:1,p:'H',q:'~3-4'},
+  {id:'C2',s:'C',n:'GOC — General Organic',d:2,p:'H',q:'~1-2'},
+  {id:'C3',s:'C',n:'Chemical Bonding',d:3,p:'H',q:'~1-2'},
+  {id:'C4',s:'C',n:'Equilibrium',d:4,p:'H',q:'~2-3'},
+  {id:'C5',s:'C',n:'Chemical Thermodynamics',d:5,p:'H',q:'~1-2'},
+  {id:'C6',s:'C',n:'Chemical Kinetics',d:6,p:'M',q:'~1-2'},
+  {id:'C7',s:'C',n:'Aldehydes, Ketones & Carboxylic Acids',d:7,p:'M',q:'~1-2'},
+  {id:'C8',s:'C',n:'D-F Block Elements',d:8,p:'M',q:'~0-1'},
+  {id:'C9',s:'C',n:'Biomolecules & Polymers',d:9,p:'L',q:'~0-1'},
+  {id:'C10',s:'C',n:'Solutions',d:10,p:'M',q:'~0-1'},
+  {id:'M1',s:'M',n:'Matrices & Determinants',d:11,p:'H',q:'~1-2'},
+  {id:'M2',s:'M',n:'3D Geometry',d:11,p:'H',q:'~1-2'},
+  {id:'M3',s:'M',n:'Vector Algebra',d:12,p:'H',q:'~1-2'},
+  {id:'M4',s:'M',n:'Sequence & Series',d:12,p:'H',q:'~1-2'},
+  {id:'M5',s:'M',n:'Statistics & Probability',d:13,p:'H',q:'~1-2'},
+  {id:'M6',s:'M',n:'Definite Integration',d:13,p:'H',q:'~1'},
+  {id:'M7',s:'M',n:'Permutation & Combination',d:14,p:'M',q:'~1'},
+  {id:'M8',s:'M',n:'Sets & Relations',d:14,p:'L',q:'~0-1'},
+  {id:'M9',s:'M',n:'Trig Ratio & Identities',d:15,p:'L',q:'~0-1'},
+  {id:'M10',s:'M',n:'Indefinite Integrals',d:15,p:'L',q:'~0-1'},
+];
+
+const PLAN_DAYS=[];
+for(let d=1;d<=23;d++){
+  const chs=CHS.filter(c=>c.d===d);
+  let type='study';
+  if(d===16) type='revision';
+  else if(d>=17) type='mock';
+  let title='';
+  if(type==='study') title=chs.map(c=>c.n.split(' ')[0]).join(' · ');
+  else if(type==='revision') title='Full PCM Revision';
+  else title=`${d<=22?3:2} Mock Tests`;
+  const badge=type==='mock'?'mock':type==='revision'?'rev':chs[0]?.s==='M'?'math':'phy';
+  PLAN_DAYS.push({d,type,badge,title,chs});
+}
+
+const MOCKS=[];const SLOTS=['Morning','Afternoon','Evening'];let mid=1;
+for(let d=17;d<=23;d++){const cnt=d<=22?3:2;for(let s=0;s<cnt;s++)MOCKS.push({id:mid++,d,slot:SLOTS[s]});}
+
+// Schedule events (hour from midnight, e.g. 9 = 9am, 25 = 1am next day)
+const SCHED=[
+  {h:9,   dur:1.5, title:'Theory Revision',      sub:'Chapter 1 · theory + formulas',  type:'study'},
+  {h:10.5,dur:0.5, title:'Breakfast',             sub:'Break',                          type:'break'},
+  {h:11,  dur:3,   title:'PYQs Practice',         sub:'20–30 PYQs + advanced Qs',       type:'study'},
+  {h:14,  dur:1,   title:'Lunch Break',           sub:'Rest',                           type:'break'},
+  {h:15,  dur:3,   title:'2nd Chapter / Mock',    sub:'Study or full mock test',         type:'mixed'},
+  {h:18,  dur:0.5, title:'Evening Break',         sub:'Walk + snacks',                  type:'break'},
+  {h:18.5,dur:3,   title:'3rd Chapter / Analysis',sub:'Study or mock analysis',         type:'study'},
+  {h:21.5,dur:0.5, title:'Dinner',                sub:'Break',                          type:'break'},
+  {h:22,  dur:3,   title:'Mixed PCM / Part Test', sub:'Mixed questions + part test',    type:'mixed'},
+  {h:25,  dur:2,   title:'Error Log Review',      sub:'Weak topics · wind down',        type:'study'},
+];
+
+const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DAYS_SHORT=['SUN','MON','TUE','WED','THU','FRI','SAT'];
+
+// ════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════
+let S=JSON.parse(localStorage.getItem('avakini5')||'{}');
+if(!S.cs)S.cs={};
+if(!S.dd)S.dd={};
+if(!S.md)S.md={};
+if(!S.ms)S.ms={};
+if(!S.logs)S.logs=[];
+if(!S.pomoDayMins)S.pomoDayMins=0;
+if(!S.pomoSessions)S.pomoSessions=0;
+if(!S.pomoDate)S.pomoDate='';
+const sv=()=>localStorage.setItem('avakini5',JSON.stringify(S));
+
+function curDay(){
+  const diff=Math.floor((new Date()-START_DATE)/86400000);
+  return Math.min(Math.max(diff+1,0),23);
+}
+function dateForDay(d){const dt=new Date(START_DATE);dt.setDate(dt.getDate()+d-1);return dt;}
+function dayForDate(dt){const diff=Math.floor((dt-START_DATE)/86400000);return(diff>=0&&diff<23)?diff+1:null;}
+function sameDay(a,b){return a.getFullYear()===b.getFullYear()&&a.getMonth()===b.getMonth()&&a.getDate()===b.getDate();}
+function addDays(d,n){const dt=new Date(d);dt.setDate(dt.getDate()+n);return dt;}
+function weekStart(d){const dt=new Date(d);dt.setDate(dt.getDate()-dt.getDay());return dt;}
+
+function stats(){
+  const p=CHS.filter(c=>c.s==='P'&&S.cs[c.id]==='done').length;
+  const c=CHS.filter(c=>c.s==='C'&&S.cs[c.id]==='done').length;
+  const m=CHS.filter(c=>c.s==='M'&&S.cs[c.id]==='done').length;
+  const mk=Object.values(S.md).filter(Boolean).length;
+  const tot=p+c+m;
+  const pct=Math.round(((tot+mk)/50)*100);
+  const scores=MOCKS.map(mo=>S.ms[mo.id]?.t).filter(v=>v!==undefined&&v!=='').map(Number).filter(v=>!isNaN(v));
+  const avg=scores.length?Math.round(scores.reduce((a,b)=>a+b,0)/scores.length):null;
+  return{p,c,m,mk,tot,pct,avg,scores};
+}
+
+// ════════════════════════════════════════════
+// RING HELPER
+// ════════════════════════════════════════════
+function setRing(id,pct,circ=107){
+  const el=document.getElementById(id);if(!el)return;
+  el.style.strokeDashoffset=circ-(circ*Math.min(pct,100)/100);
+}
+
+// ════════════════════════════════════════════
+// MAIN RENDER
+// ════════════════════════════════════════════
+function rr(){
+  const st=stats(),day=curDay();
+  // sidebar
+  document.getElementById('dcv').textContent=`Day ${day}`;
+  document.getElementById('dcs').textContent=`of 23 — ${Math.max(23-day,0)} left`;
+  document.getElementById('dcf').style.width=(day/23*100)+'%';
+  document.getElementById('nb-day').textContent=`D${day}`;
+  document.getElementById('nb-ch').textContent=`${st.tot}/30`;
+  document.getElementById('nb-mk').textContent=`${st.mk}/20`;
+  // topbar
+  document.getElementById('tp1').textContent=`${st.tot}/30`;
+  document.getElementById('tp2').textContent=`${st.mk}/20 Mocks`;
+  document.getElementById('tp3').textContent=st.avg!=null?`Avg ${st.avg}`:'Avg —';
+  // overview stats
+  const sv2=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
+  sv2('ov1',`${st.p}/10`);sv2('ov2',`${st.c}/10`);sv2('ov3',`${st.m}/10`);sv2('ov4',`${st.mk}/20`);sv2('ov5',`${st.pct}%`);
+  setRing('rp',st.p/10*100);setRing('rc',st.c/10*100);setRing('rm',st.m/10*100);setRing('rmo',st.mk/20*100);setRing('ra',st.pct);
+  setRing('brf',st.pct,276);
+  document.getElementById('brpct').textContent=`${st.pct}%`;
+  document.getElementById('brc').textContent=st.tot;
+  document.getElementById('brm').textContent=st.mk;
+  document.getElementById('brd').textContent=`D${day}`;
+  document.getElementById('brsub').textContent=st.pct===0?'Start studying to track progress!':st.pct<50?'Great start — keep going! 💪':st.pct<80?'Over halfway there! 🔥':'Almost done — push hard! 🚀';
+  const sp=(id,v)=>{const e=document.getElementById(id);if(e)e.style.width=Math.min(v,100)+'%';};
+  sp('pb1',st.p*10);sp('pb2',st.c*10);sp('pb3',st.m*10);sp('pb4',st.mk/20*100);sp('pb5',st.pct);
+  sv2('sbv1',`${st.p}/10`);sv2('sbv2',`${st.c}/10`);sv2('sbv3',`${st.m}/10`);sv2('sbv4',`${st.mk}/20`);
+  sp('sbf1',st.p*10);sp('sbf2',st.c*10);sp('sbf3',st.m*10);sp('sbf4',st.mk/20*100);
+  const now=new Date();
+  const de=document.getElementById('tdate');if(de)de.textContent=now.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'});
+  renderHeatmap(day);renderTF(day);renderDG();renderCT();renderMG();renderMockChart();renderAna();
+}
+
+// ════════════════════════════════════════════
+// HEATMAP
+// ════════════════════════════════════════════
+function renderHeatmap(day){
+  const g=document.getElementById('hmg');if(!g)return;
+  g.innerHTML=Array.from({length:23},(_,i)=>{
+    const d=i+1,pl=PLAN_DAYS[i],isMock=pl.type==='mock',isDone=S.dd[d],isToday=d===day,isFuture=d>day;
+    let cls='hmc';
+    if(isToday)cls+=' today-c';
+    if(isDone)cls+=isMock?' mock-d':' done';
+    else if(isMock&&!isFuture)cls+=' mock-p';
+    else if(isFuture)cls+=' future';
+    else cls+=' empty';
+    return `<div class="${cls}" title="Day ${d}: ${pl.title}" onclick="hmClick(${d})"></div>`;
+  }).join('');
+}
+function hmClick(d){S.dd[d]=!S.dd[d];const pl=PLAN_DAYS[d-1];if(S.dd[d]&&pl.type==='study')pl.chs.forEach(c=>{if(S.cs[c.id]!=='done')S.cs[c.id]='done';});sv();rr();}
+
+// ════════════════════════════════════════════
+// TODAY FOCUS
+// ════════════════════════════════════════════
+function renderTF(day){
+  const el=document.getElementById('tfz');if(!el)return;
+  if(day<=0){el.innerHTML='<div class="tfc"><div class="tfd">Day 0</div><div class="tft">Study starts tomorrow (Mar 8)! Get ready 💪</div></div>';return;}
+  const pl=PLAN_DAYS[day-1];if(!pl)return;
+  const sc={P:'var(--phy)',C:'var(--chem)',M:'var(--math)'};
+  const sn={P:'Physics',C:'Chemistry',M:'Maths'};
+  let body='';
+  if(pl.type==='mock'){
+    const ms=MOCKS.filter(m=>m.d===day);
+    body=ms.map(m=>{const done=S.md[m.id];const sc2=S.ms[m.id];return `<div class="tfch"><span class="mir material-icons-round" style="color:var(--mock);font-size:14px">assignment</span><span style="flex:1;font-size:12.5px;font-weight:500;color:var(--t2)">Mock #${m.id} — ${m.slot}</span>${sc2&&sc2.t?`<span style="font-size:11px;color:var(--mock);font-weight:800">${sc2.t}/300</span>`:''}<span class="tfst ${done?'done':'pending'}">${done?'Done':'Pending'}</span></div>`;}).join('');
+  } else if(pl.type==='revision'){
+    body=`<div class="tfch"><span class="mir material-icons-round" style="color:var(--yel);font-size:14px">refresh</span><span style="flex:1;font-size:12.5px;font-weight:500;color:var(--t2)">Full PCM Revision — redo all weak PYQs</span></div>`;
+  } else {
+    body=pl.chs.map(c=>{const st=S.cs[c.id]||'pending';return `<div class="tfch"><span style="width:7px;height:7px;border-radius:50%;background:${sc[c.s]};flex-shrink:0;"></span><span style="font-size:9.5px;color:var(--t3);min-width:60px;font-weight:600">${sn[c.s]}</span><span style="flex:1;font-size:12.5px;font-weight:500;color:var(--t2)">${c.n}</span><span class="pr ${c.p}">${c.p==='H'?'HIGH':c.p==='M'?'MED':'LOW'}</span><span class="tfst ${st}" onclick="cycleC('${c.id}')">${st==='pending'?'Pending':st==='in-progress'?'In Progress':'Done'}</span></div>`;}).join('');
+  }
+  const bi={study:'menu_book',revision:'refresh',mock:'assignment'}[pl.type];
+  const bc=pl.type==='mock'?'mock':pl.type==='revision'?'rev':'phy';
+  el.innerHTML=`<div class="tfc"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:11px;"><div><div class="tfd">Day ${day} of 23 — Today's Mission</div><div class="tft">${pl.title}</div></div><span class="dbadge ${bc}"><span class="mir material-icons-round" style="font-size:11px">${bi}</span>${pl.badge.toUpperCase()}</span></div>${body}</div>`;
+}
+function cycleC(id){const cur=S.cs[id]||'pending';S.cs[id]={pending:'in-progress','in-progress':'done',done:'pending'}[cur];sv();rr();}
+
+// ════════════════════════════════════════════
+// MOCK CHART
+// ════════════════════════════════════════════
+function renderMockChart(){
+  const tots=MOCKS.map(m=>S.ms[m.id]?.t).filter(v=>v!==undefined&&v!=='').map(Number).filter(v=>!isNaN(v));
+  const avgEl=document.getElementById('mcs-avg');
+  if(avgEl)avgEl.textContent=tots.length?Math.round(tots.reduce((a,b)=>a+b,0)/tots.length):'—';
+  const bestEl=document.getElementById('mcs-best');
+  if(bestEl&&tots.length)bestEl.textContent=`Best: ${Math.max(...tots)} | Latest: ${tots[tots.length-1]}`;
+  // bar chart
+  const bcEl=document.getElementById('mbc');
+  if(bcEl){
+    if(!tots.length){bcEl.innerHTML='<div style="flex:1;text-align:center;color:var(--t4);font-size:11px;padding:18px 0;">Enter mock scores to see chart</div>';return;}
+    const mx=Math.max(...tots,300);
+    bcEl.innerHTML=MOCKS.map((m,i)=>{const v=Number(S.ms[m.id]?.t)||0;if(!v)return `<div class="bcw" style="opacity:.25;"><div class="bcb" style="height:3px;background:var(--s5);"></div><div class="bcn">#${m.id}</div></div>`;const h=Math.max(4,Math.round(v/mx*72));const cl=v>=200?'#22c55e':v>=150?'#f59e0b':'#ef4444';return `<div class="bcw" title="Mock #${m.id}: ${v}/300"><div class="bcb" style="height:${h}px;background:linear-gradient(180deg,${cl}cc,${cl});border-radius:4px 4px 0 0;"></div><div class="bcv">${v}</div><div class="bcn">#${m.id}</div></div>`;}).join('');
+  }
+  // SVG line chart
+  const svgEl=document.getElementById('mls');
+  if(svgEl){
+    if(tots.length<2){svgEl.innerHTML=`<text x="300" y="35" fill="rgba(255,255,255,.12)" font-size="10" text-anchor="middle" font-family="Poppins">Complete 2+ mocks for trend line</text>`;return;}
+    const W=600,H=70,p=8,mn=Math.min(...tots),mx=Math.max(...tots),range=mx-mn||1;
+    const pts=tots.map((v,i)=>({x:p+(i/(tots.length-1))*(W-2*p),y:H-p-((v-mn)/range)*(H-2*p)}));
+    const pstr=pts.map(pt=>`${pt.x},${pt.y}`).join(' ');
+    const astr=`${pts[0].x},${H} `+pstr+` ${pts[pts.length-1].x},${H}`;
+    svgEl.innerHTML=`<defs><linearGradient id="mlg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#818cf8" stop-opacity=".3"/><stop offset="100%" stop-color="#818cf8" stop-opacity="0"/></linearGradient></defs><polygon points="${astr}" fill="url(#mlg)"/><polyline points="${pstr}" class="lc-line" stroke="#818cf8"/>${pts.map((pt,i)=>`<circle cx="${pt.x}" cy="${pt.y}" r="3" fill="${tots[i]>=200?'#22c55e':tots[i]>=150?'#f59e0b':'#ef4444'}"><title>Mock ${i+1}: ${tots[i]}</title></circle>`).join('')}`;
+  }
+  // subject sparklines
+  const spkEl=document.getElementById('sub-sparks');
+  if(!spkEl)return;
+  const phyV=MOCKS.map(m=>S.ms[m.id]?.p).filter(v=>v!==undefined&&v!=='').map(Number).filter(v=>!isNaN(v));
+  const chemV=MOCKS.map(m=>S.ms[m.id]?.c).filter(v=>v!==undefined&&v!=='').map(Number).filter(v=>!isNaN(v));
+  const mathV=MOCKS.map(m=>S.ms[m.id]?.m).filter(v=>v!==undefined&&v!=='').map(Number).filter(v=>!isNaN(v));
+  function mkSpk(vals,color,label){
+    if(!vals.length)return `<div style="background:var(--s3);border:1px solid var(--bd);border-radius:var(--r);padding:12px;"><div style="font-size:11px;font-weight:700;color:${color};margin-bottom:5px;">${label}</div><div style="font-size:10px;color:var(--t4);">No data</div></div>`;
+    const avg2=Math.round(vals.reduce((a,b)=>a+b,0)/vals.length);
+    const trend=vals.length>=2?vals[vals.length-1]-vals[vals.length-2]:0;
+    let spkSvg='';
+    if(vals.length>=2){const W2=180,H2=36,p2=3,mn2=Math.min(...vals),mx2=Math.max(...vals),r2=mx2-mn2||1;const pts2=vals.map((v,i)=>({x:p2+(i/(vals.length-1))*(W2-2*p2),y:H2-p2-((v-mn2)/r2)*(H2-2*p2)}));const ps2=pts2.map(pt=>`${pt.x},${pt.y}`).join(' ');const as2=`${pts2[0].x},${H2} `+ps2+` ${pts2[pts2.length-1].x},${H2}`;spkSvg=`<svg viewBox="0 0 ${W2} ${H2}" style="width:100%;height:36px;"><polygon points="${as2}" fill="${color}" fill-opacity=".1"/><polyline points="${ps2}" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round"/>${pts2.map(pt=>`<circle cx="${pt.x}" cy="${pt.y}" r="2.5" fill="${color}"/>`).join('')}</svg>`;}
+    return `<div style="background:var(--s3);border:1px solid var(--bd);border-radius:var(--r);padding:12px 13px;"><div style="display:flex;justify-content:space-between;margin-bottom:6px;"><div style="font-size:11px;font-weight:700;color:${color};">${label}</div><div style="font-size:15px;font-weight:900;color:${color};">${avg2}</div></div>${spkSvg}<div style="display:flex;justify-content:space-between;margin-top:4px;font-size:9.5px;color:var(--t4);"><span>${vals.length} mocks</span><span style="color:${trend>=0?'var(--grn)':'var(--red)'};font-weight:700;">${trend>=0?'▲':'▼'}${Math.abs(trend)}</span></div></div>`;
+  }
+  spkEl.innerHTML=mkSpk(phyV,'#60a5fa','Physics')+mkSpk(chemV,'#34d399','Chemistry')+mkSpk(mathV,'#c084fc','Maths');
+}
+
+// ════════════════════════════════════════════
+// MOCK GRID
+// ════════════════════════════════════════════
+function renderMG(){
+  const g=document.getElementById('mg');if(!g)return;
+  g.innerHTML=MOCKS.map(m=>{
+    const done=S.md[m.id];const sc=S.ms[m.id]||{};
+    const tv=Number(sc.t)||0;const gc=tv>=200?'var(--grn)':tv>=150?'var(--mock)':'var(--red)';
+    const pp=Math.min((Number(sc.p)||0)/100*100,100),cp=Math.min((Number(sc.c)||0)/100*100,100),mp=Math.min((Number(sc.m)||0)/100*100,100);
+    const gr=tv>=240?{g:'A+',c:'var(--grn)'}:tv>=210?{g:'A',c:'var(--grn)'}:tv>=180?{g:'B+',c:'var(--mock)'}:tv>=150?{g:'B',c:'var(--mock)'}:tv>=120?{g:'C',c:'var(--phy)'}:tv>0?{g:'D',c:'var(--red)'}:null;
+    return `<div class="mkcard ${done?'dmk':''}"><div class="mktop"><div><div class="mknum">MOCK #${String(m.id).padStart(2,'0')}</div><div class="mkday">Day ${m.d} · ${m.slot}</div></div><input type="checkbox" class="mkchk" ${done?'checked':''} onchange="togMock(${m.id},this)"></div><div class="mk-total"><input class="mktotinp" type="number" placeholder="—" value="${sc.t||''}" min="-72" max="300" oninput="sms(${m.id},'t',this.value)"><div class="mklbl">Total /300</div><div class="mk-gauge"><div class="mk-gf" id="mgf${m.id}" style="width:${Math.min(tv/300*100,100)}%;background:${gc};${tv>0?'box-shadow:0 0 5px '+gc:''}"></div></div></div><div class="mk-subs"><div class="mk-sb"><input class="mk-si pi" type="number" placeholder="—" value="${sc.p||''}" min="-24" max="100" oninput="sms(${m.id},'p',this.value)"><div class="mk-sbar"><div class="mk-sbf phy" id="msb${m.id}p" style="width:${pp}%"></div></div><div class="mk-sl pl">Phy</div></div><div class="mk-sb"><input class="mk-si ci" type="number" placeholder="—" value="${sc.c||''}" min="-24" max="100" oninput="sms(${m.id},'c',this.value)"><div class="mk-sbar"><div class="mk-sbf chem" id="msb${m.id}c" style="width:${cp}%"></div></div><div class="mk-sl cl">Chem</div></div><div class="mk-sb"><input class="mk-si mi" type="number" placeholder="—" value="${sc.m||''}" min="-24" max="100" oninput="sms(${m.id},'m',this.value)"><div class="mk-sbar"><div class="mk-sbf math" id="msb${m.id}m" style="width:${mp}%"></div></div><div class="mk-sl ml">Math</div></div></div>${gr?`<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 9px;background:var(--s1);border-radius:7px;"><span style="font-size:10px;color:var(--t3);font-weight:600;">Grade</span><span style="font-size:13px;font-weight:900;color:${gr.c};">${gr.g}</span></div>`:''}</div>`;
+  }).join('');
+}
+function togMock(id,el){S.md[id]=el.checked;sv();rr();}
+function sms(id,f,v){if(!S.ms[id])S.ms[id]={};S.ms[id][f]=v;sv();const sc=S.ms[id];const tv=Number(sc.t)||0;const gc=tv>=200?'var(--grn)':tv>=150?'var(--mock)':'var(--red)';const gf=document.getElementById(`mgf${id}`);if(gf){gf.style.width=Math.min(tv/300*100,100)+'%';gf.style.background=gc;gf.style.boxShadow=tv>0?`0 0 5px ${gc}`:'';}const pb=document.getElementById(`msb${id}p`);if(pb)pb.style.width=Math.min((Number(sc.p)||0)/100*100,100)+'%';const cb=document.getElementById(`msb${id}c`);if(cb)cb.style.width=Math.min((Number(sc.c)||0)/100*100,100)+'%';const mb=document.getElementById(`msb${id}m`);if(mb)mb.style.width=Math.min((Number(sc.m)||0)/100*100,100)+'%';const st2=stats();document.getElementById('tp3').textContent=st2.avg!=null?`Avg ${st2.avg}`:'Avg —';renderMockChart();renderAna();}
+
+// ════════════════════════════════════════════
+// 23-DAY PLAN
+// ════════════════════════════════════════════
+let planF='all';
+function fp(f,btn){planF=f;document.querySelectorAll('#pf .fb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');renderDG();}
+function renderDG(){
+  const g=document.getElementById('dg');if(!g)return;
+  const cd=curDay();
+  let pls=PLAN_DAYS;
+  if(planF==='P')pls=pls.filter(p=>p.chs.some(c=>c.s==='P'));
+  else if(planF==='C')pls=pls.filter(p=>p.chs.some(c=>c.s==='C'));
+  else if(planF==='M')pls=pls.filter(p=>p.chs.some(c=>c.s==='M'));
+  else if(planF==='mock')pls=pls.filter(p=>p.type==='mock');
+  else if(planF==='done')pls=pls.filter(p=>S.dd[p.d]);
+  else if(planF==='pending')pls=pls.filter(p=>!S.dd[p.d]);
+  g.innerHTML=pls.map(pl=>{
+    const it=pl.d===cd,id2=S.dd[pl.d],im=pl.type==='mock',ir=pl.type==='revision';
+    let cd2=0;pl.chs.forEach(c=>{if(S.cs[c.id]==='done')cd2++;});
+    const prog=pl.chs.length?Math.round(cd2/pl.chs.length*100):0;
+    let cl='';
+    if(im){const ms2=MOCKS.filter(m=>m.d===pl.d);cl=ms2.map(m=>{const done2=S.md[m.id];const sc2=S.ms[m.id];return `<li class="chi"><span class="mir material-icons-round" style="font-size:13px;color:${done2?'var(--grn)':'var(--mock)'}">assignment</span><span class="cn ${done2?'dk':''}">Mock #${m.id} — ${m.slot}</span>${sc2&&sc2.t?`<span style="font-size:10px;color:var(--mock);font-weight:700">${sc2.t}</span>`:''}</li>`;}).join('');}
+    else if(ir)cl=`<li class="chi"><span class="mir material-icons-round" style="font-size:13px;color:var(--yel)">refresh</span><span class="cn">Full PCM Revision</span></li>`;
+    else cl=pl.chs.map(c=>{const st2=S.cs[c.id]||'pending';return `<li class="chi"><span class="cdot ${c.s}"></span><span class="cn ${st2==='done'?'dk':''}">${c.n}</span><span class="pr ${c.p}">${c.p}</span></li>`;}).join('');
+    const bi={study:'menu_book',revision:'refresh',mock:'assignment'}[pl.type];
+    return `<div class="dc2 ${it?'td':''} ${id2?'dd':''}" id="dc${pl.d}"><div class="dprog"><div class="dprogf" style="width:${!im&&!ir?prog:id2?100:0}%"></div></div><div class="dh"><div><div class="dnum ${it?'tl':''}">Day ${pl.d}${it?' · TODAY':''}</div><div class="dtit">${pl.title}</div></div><span class="dbadge ${pl.badge}"><span class="mir material-icons-round" style="font-size:11px">${bi}</span>${pl.badge.toUpperCase()}</span></div><div class="dbody"><ul class="chl">${cl}</ul>${!im&&!ir&&pl.chs.length?`<div style="margin-top:6px;font-size:10px;color:var(--t4);font-weight:600">${cd2}/${pl.chs.length} done</div>`:''}</div><div class="dfoot"><div class="dfi"><span class="mir material-icons-round">schedule</span>${im?'Mock day':'~12h study'}</div><button class="dbtn ${id2?'ok':''}" onclick="mDay(${pl.d})"><span class="mir material-icons-round">${id2?'check_circle':'radio_button_unchecked'}</span>${id2?'Done':'Mark Done'}</button></div></div>`;
+  }).join('');
+}
+function mDay(d){S.dd[d]=!S.dd[d];const pl=PLAN_DAYS[d-1];if(S.dd[d]&&pl.type==='study')pl.chs.forEach(c=>{if(S.cs[c.id]!=='done')S.cs[c.id]='done';});sv();rr();}
+
+// ════════════════════════════════════════════
+// CHAPTERS
+// ════════════════════════════════════════════
+let chF='all';
+function fc(f,btn){chF=f;document.querySelectorAll('#cf .fb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');renderCT();}
+function renderCT(){
+  const b=document.getElementById('ctb');if(!b)return;
+  const sn={P:'Physics',C:'Chemistry',M:'Maths'};
+  let cs=CHS;
+  if(chF==='P')cs=cs.filter(c=>c.s==='P');else if(chF==='C')cs=cs.filter(c=>c.s==='C');else if(chF==='M')cs=cs.filter(c=>c.s==='M');else if(chF==='pending')cs=cs.filter(c=>!S.cs[c.id]||S.cs[c.id]==='pending');else if(chF==='in-progress')cs=cs.filter(c=>S.cs[c.id]==='in-progress');else if(chF==='done')cs=cs.filter(c=>S.cs[c.id]==='done');
+  b.innerHTML=cs.map((c,i)=>{const st=S.cs[c.id]||'pending';return `<tr><td style="font-size:10px;color:var(--t4);font-weight:600">${i+1}</td><td><span class="stag ${c.s}">${sn[c.s]}</span></td><td style="font-weight:500">${c.n}</td><td style="font-size:10px;color:var(--t3);">Day ${c.d}</td><td><span class="pr ${c.p}">${c.p==='H'?'🔥 HIGH':c.p==='M'?'⚡ MED':'· LOW'}</span></td><td style="color:var(--t2)">${c.q}</td><td><div class="ssw ${st}"><select class="ssel" onchange="upC('${c.id}',this.value)"><option value="pending" ${st==='pending'?'selected':''}>⬜ Pending</option><option value="in-progress" ${st==='in-progress'?'selected':''}>🔄 In Progress</option><option value="done" ${st==='done'?'selected':''}>✅ Done</option></select></div></td></tr>`;}).join('');
+}
+function upC(id,val){S.cs[id]=val;sv();rr();}
+
+// ════════════════════════════════════════════
+// ANALYTICS
+// ════════════════════════════════════════════
+function renderAna(){
+  const scores=MOCKS.map(m=>({id:m.id,...(S.ms[m.id]||{})})).filter(m=>m.t!==undefined&&m.t!=='');
+  const tots=scores.map(s=>Number(s.t)).filter(v=>!isNaN(v));
+  const se=document.getElementById('anas');if(!se)return;
+  if(!tots.length){se.innerHTML=`<div class="sc acc" style="grid-column:1/-1;padding:20px;text-align:center;color:var(--t4);font-size:12px;">No mock scores yet. Enter scores in Mock Tests to see analytics.</div>`;document.getElementById('sh').innerHTML='<div class="empty" style="padding:14px">No data</div>';document.getElementById('sac').innerHTML='<div class="empty" style="padding:14px">No data</div>';document.getElementById('pg2').innerHTML='<div class="empty" style="padding:14px">No data</div>';const svg2=document.getElementById('ana-svg');if(svg2)svg2.innerHTML=`<text x="200" y="36" fill="rgba(255,255,255,.1)" font-size="10" text-anchor="middle" font-family="Poppins">No data</text>`;return;}
+  const avg=Math.round(tots.reduce((a,b)=>a+b,0)/tots.length);
+  const best=Math.max(...tots);const trend=tots.length>=2?tots[tots.length-1]-tots[tots.length-2]:0;
+  se.innerHTML=`
+    <div class="sc acc"><div class="sc-top"><div><div class="sc-lbl">Average</div><div class="sc-val">${avg}</div><div class="sc-sub">out of 300</div></div><div class="sc-ring"><svg viewBox="0 0 46 46" width="46" height="46"><circle class="sc-ri" cx="23" cy="23" r="17" stroke="rgba(99,102,241,.15)"/><circle class="sc-rf" cx="23" cy="23" r="17" stroke="var(--acc2)" stroke-dasharray="107" stroke-dashoffset="${107-(107*avg/300)}"/></svg><div class="sc-icon"><span class="mir material-icons-round" style="color:var(--acc2);font-size:13px">functions</span></div></div></div></div>
+    <div class="sc mock"><div class="sc-top"><div><div class="sc-lbl">Best</div><div class="sc-val">${best}</div><div class="sc-sub">out of 300</div></div><div class="sc-ring"><svg viewBox="0 0 46 46" width="46" height="46"><circle class="sc-ri" cx="23" cy="23" r="17" stroke="rgba(245,158,11,.15)"/><circle class="sc-rf" cx="23" cy="23" r="17" stroke="var(--mock)" stroke-dasharray="107" stroke-dashoffset="${107-(107*best/300)}"/></svg><div class="sc-icon"><span class="mir material-icons-round" style="color:var(--mock);font-size:13px">emoji_events</span></div></div></div></div>
+    <div class="sc phy"><div class="sc-top"><div><div class="sc-lbl">Attempted</div><div class="sc-val">${tots.length}/20</div><div class="sc-sub">mocks</div></div><div class="sc-ring"><svg viewBox="0 0 46 46" width="46" height="46"><circle class="sc-ri" cx="23" cy="23" r="17" stroke="rgba(59,130,246,.15)"/><circle class="sc-rf" cx="23" cy="23" r="17" stroke="var(--phy)" stroke-dasharray="107" stroke-dashoffset="${107-(107*tots.length/20)}"/></svg><div class="sc-icon"><span class="mir material-icons-round" style="color:var(--phy);font-size:13px">check_circle</span></div></div></div></div>
+    <div class="sc ${trend>=0?'chem':'math'}"><div class="sc-top"><div><div class="sc-lbl">Trend</div><div class="sc-val">${trend>=0?'+':''}${trend}</div><div class="sc-sub">vs previous</div></div><div class="sc-ring"><svg viewBox="0 0 46 46" width="46" height="46"><circle class="sc-ri" cx="23" cy="23" r="17" stroke="rgba(16,185,129,.15)"/></svg><div class="sc-icon"><span class="mir material-icons-round" style="color:${trend>=0?'var(--chem)':'var(--red)'};font-size:16px">${trend>=0?'trending_up':'trending_down'}</span></div></div></div></div>
+  `;
+  const svg2=document.getElementById('ana-svg');
+  if(svg2&&tots.length>=2){const W=400,H=72,p=6,mn=Math.min(...tots),mx=Math.max(...tots),r=mx-mn||1;const pts=tots.map((v,i)=>({x:p+(i/(tots.length-1))*(W-2*p),y:H-p-((v-mn)/r)*(H-2*p)}));const ps=pts.map(pt=>`${pt.x},${pt.y}`).join(' ');const as=`${pts[0].x},${H} `+ps+` ${pts[pts.length-1].x},${H}`;svg2.innerHTML=`<defs><linearGradient id="alg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#818cf8" stop-opacity=".25"/><stop offset="100%" stop-color="#818cf8" stop-opacity="0"/></linearGradient></defs><polygon points="${as}" fill="url(#alg)"/><polyline points="${ps}" class="lc-line" stroke="#818cf8" stroke-width="1.8"/>${pts.map((pt,i)=>`<circle cx="${pt.x}" cy="${pt.y}" r="3" fill="${tots[i]>=200?'#4ade80':tots[i]>=150?'#fbbf24':'#f87171'}"/>`).join('')}`;}
+  else if(svg2)svg2.innerHTML=`<text x="200" y="36" fill="rgba(255,255,255,.1)" font-size="10" text-anchor="middle" font-family="Poppins">${tots.length<2?'Need 2+ mocks':'No data'}</text>`;
+  document.getElementById('ana-trl').innerHTML=scores.map(s=>`<span style="font-size:9px;color:var(--t4);font-weight:600">#${s.id}</span>`).join('');
+  document.getElementById('sh').innerHTML=scores.slice().reverse().map(s=>{const v=Number(s.t)||0,pct=Math.round(v/300*100);const gr=v>=240?'A+':v>=210?'A':v>=180?'B+':v>=150?'B':v>=120?'C':'D';const gc={'A+':'var(--grn)','A':'var(--grn)','B+':'var(--mock)','B':'var(--mock)','C':'var(--phy)','D':'var(--red)'}[gr];return `<div class="shr"><span class="shn">Mock #${s.id}</span><span class="sht">${v}</span><div class="shbw"><div class="shbf" style="width:${pct}%"></div></div><span class="shg" style="background:${gc}20;color:${gc}">${gr}</span></div>`;}).join('');
+  const pa=scores.map(s=>Number(s.p)).filter(v=>!isNaN(v)&&v!==0);const ca=scores.map(s=>Number(s.c)).filter(v=>!isNaN(v)&&v!==0);const ma=scores.map(s=>Number(s.m)).filter(v=>!isNaN(v)&&v!==0);
+  const pavg=pa.length?Math.round(pa.reduce((a,b)=>a+b,0)/pa.length):0;const cavg=ca.length?Math.round(ca.reduce((a,b)=>a+b,0)/ca.length):0;const mavg=ma.length?Math.round(ma.reduce((a,b)=>a+b,0)/ma.length):0;
+  document.getElementById('sac').innerHTML=`<div style="display:flex;flex-direction:column;gap:12px;">${[['Physics',pavg,'var(--phy)','var(--phy2)'],['Chemistry',cavg,'var(--chem)','var(--chem2)'],['Maths',mavg,'var(--math)','var(--math2)']].map(([nm,av,cl,cl2])=>`<div><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span style="font-size:11px;color:var(--t2);font-weight:600">${nm}</span><span style="font-size:11.5px;font-weight:800;color:${cl}">${av}<span style="font-size:9px;color:var(--t4)">/100</span></span></div><div style="height:4px;background:var(--s5);border-radius:2px;overflow:hidden;"><div style="height:100%;border-radius:2px;background:linear-gradient(90deg,${cl},${cl2});width:${av}%;transition:width .5s;"></div></div></div>`).join('')}</div>`;
+  const og=avg>=240?{g:'A+',l:'Exceptional 🔥',c:'var(--grn)'}:avg>=210?{g:'A',l:'Excellent',c:'var(--grn)'}:avg>=180?{g:'B+',l:'Very Good',c:'var(--mock)'}:avg>=150?{g:'B',l:'Good',c:'var(--mock)'}:avg>=120?{g:'C',l:'Needs Work',c:'var(--phy)'}:{g:'D',l:'Focus Hard!',c:'var(--red)'};
+  const perc=avg>=250?'99%ile':avg>=220?'97%ile':avg>=195?'95%ile':avg>=170?'90%ile':avg>=140?'80%ile':'<80%ile';
+  document.getElementById('pg2').innerHTML=`<div style="text-align:center;padding:4px 0;"><div style="font-size:50px;font-weight:900;color:${og.c};line-height:1;text-shadow:0 0 18px ${og.c}33">${og.g}</div><div style="font-size:12px;color:var(--t2);margin:6px 0 2px;font-weight:700">${og.l}</div><div style="font-size:10.5px;color:var(--t4)">Avg ${avg}/300 · Est. ${perc}</div><div style="margin-top:12px;background:var(--s3);border:1px solid var(--bd);border-radius:9px;padding:11px;"><div style="font-size:9px;color:var(--t4);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;">99%ile Target</div><div style="font-size:19px;font-weight:900;color:var(--acc2)">250+ / 300</div><div style="font-size:10px;color:${avg>=250?'var(--grn)':'var(--t4)'};margin-top:2px;">${avg<250?`+${250-avg} to go`:'🎉 Target reached!'}</div></div></div>`;
+}
+
+// ════════════════════════════════════════════
+// CALENDAR ENGINE
+// ════════════════════════════════════════════
+let calView='week';
+let calViewDate=new Date();
+let calSelDate=new Date();
+const PX_H=60;const START_H=6;const END_H=27;// 6am to 3am+
+
+function fmtH(h){const hh=((h%24)+24)%24;const ampm=hh<12?'AM':'PM';const hr=hh%12||12;const min=Math.round((h%1)*60);return `${hr}${min?':'+String(min).padStart(2,'0'):''}${ampm}`;}
+
+const EV_COLORS={study:'e-phy',break:'e-break',mixed:'e-mixed',mock:'e-mock',rev:'e-rev'};
+
+function daySchedule(jd){
+  if(!jd)return[];
+  const pl=PLAN_DAYS[jd-1];
+  return SCHED.map(ev=>{
+    let type=ev.type;
+    if(pl.type==='mock'&&type!=='break')type='mock';
+    else if(pl.type==='revision'&&type==='study')type='rev';
+    else if(type==='study'){
+      // color by first chapter subject
+      const sub=pl.chs[0]?.s;
+      type=sub==='P'?'study':sub==='C'?'chem':sub==='M'?'math':type;
+    }
+    const evColor=type==='chem'?'e-chem':type==='math'?'e-math':EV_COLORS[type]||'e-mixed';
+    let subLabel=ev.sub;
+    if(pl.type==='study'&&ev.h===9)subLabel=pl.chs.map(c=>c.n.split(' ')[0]).join(' · ');
+    return {...ev,evColor,subLabel,isDone:S.dd[jd]};
+  });
+}
+
+function renderCalendar(){
+  const today=new Date();
+  const ws=weekStart(calViewDate);
+  const we=addDays(ws,6);
+  // week label
+  const wlbl=document.getElementById('cal-wlbl');
+  if(wlbl){
+    if(calView==='week')wlbl.textContent=`${MONTHS[ws.getMonth()]} ${ws.getDate()} – ${MONTHS[we.getMonth()]} ${we.getDate()}, ${we.getFullYear()}`;
+    else wlbl.textContent=`${MONTHS[calSelDate.getMonth()]} ${calSelDate.getDate()}, ${calSelDate.getFullYear()}`;
+  }
+  renderMiniMonth();
+  renderWeekHead();
+  renderTimeline();
+  renderCalDetail(calSelDate);
+}
+
+function renderMiniMonth(){
+  const y=calViewDate.getFullYear(),mo=calViewDate.getMonth();
+  const mlbl=document.getElementById('cal-mlbl');if(mlbl)mlbl.textContent=`${MONTHS[mo]} ${y}`;
+  const first=new Date(y,mo,1).getDay();
+  const dim=new Date(y,mo+1,0).getDate();
+  const prevDim=new Date(y,mo,0).getDate();
+  const today=new Date();
+  let html='';
+  for(let i=first-1;i>=0;i--)html+=`<div class="cmc other">${prevDim-i}</div>`;
+  for(let d=1;d<=dim;d++){
+    const dt=new Date(y,mo,d);const jd=dayForDate(dt);
+    const isT=sameDay(dt,today),isSel=sameDay(dt,calSelDate);
+    let cls='cmc';
+    if(isT)cls+=' is-today';else if(isSel)cls+=' is-sel';
+    if(jd){const pl=PLAN_DAYS[jd-1];cls+=pl.type==='mock'?' has-dot dot-mock':S.dd[jd]?' has-dot dot-done':' has-dot';}
+    html+=`<div class="${cls}" onclick="calSelectDate(new Date(${y},${mo},${d}))">${d}</div>`;
+  }
+  const total=Math.ceil((first+dim)/7)*7;
+  for(let d=1;d<=total-(first+dim);d++)html+=`<div class="cmc other">${d}</div>`;
+  const el=document.getElementById('cal-cells');if(el)el.innerHTML=html;
+}
+
+function renderWeekHead(){
+  const el=document.getElementById('cal-whead');if(!el)return;
+  const today=new Date();
+  const days=calView==='week'?Array.from({length:7},(_,i)=>addDays(weekStart(calViewDate),i)):[calSelDate];
+  const cols=days.length;
+  el.style.gridTemplateColumns=`50px repeat(${cols},1fr)`;
+  let html='<div style="border-right:1px solid var(--bd);width:50px;"></div>';
+  days.forEach(dt=>{
+    const jd=dayForDate(dt);const isT=sameDay(dt,today);const isSel=sameDay(dt,calSelDate);
+    const numHtml=isT?`<div class="today-circle">${dt.getDate()}</div>`:`<div class="cwh-num" style="${isSel?'color:var(--acc2);':''}">${dt.getDate()}</div>`;
+    let dotColor='transparent';
+    if(jd){const pl=PLAN_DAYS[jd-1];dotColor=pl.type==='mock'?'var(--mock)':S.dd[jd]?'var(--grn)':'var(--acc2)';}
+    html+=`<div class="cwh" onclick="calSelectDate(new Date(${dt.getFullYear()},${dt.getMonth()},${dt.getDate()}))">
+      <div class="cwh-day">${DAYS_SHORT[dt.getDay()]}</div>${numHtml}
+      ${jd?`<div class="cwh-dot" style="background:${dotColor}"></div>`:'<div class="cwh-dot"></div>'}
+    </div>`;
+  });
+  el.innerHTML=html;
+}
+
+function renderTimeline(){
+  const tgrid=document.getElementById('cal-tgrid');if(!tgrid)return;
+  const totalH=END_H-START_H;
+  const totalPx=totalH*PX_H;
+  tgrid.style.height=totalPx+'px';
+  tgrid.style.position='relative';
+
+  const days=calView==='week'?Array.from({length:7},(_,i)=>addDays(weekStart(calViewDate),i)):[calSelDate];
+  const cols=days.length;
+
+  // time labels
+  let timeHtml='<div class="cal-time-col">';
+  for(let h=START_H;h<END_H;h++){
+    const label=h===0?'12 AM':h<12?`${h} AM`:h===12?'12 PM':h<24?`${h-12} PM`:h===24?'12 AM':`${h-24} AM`;
+    timeHtml+=`<div class="cal-time-lbl" style="height:${PX_H}px;"><span style="margin-top:-8px;display:block;">${label}</span></div>`;
+  }
+  timeHtml+='</div>';
+
+  // columns
+  let colsHtml=`<div class="cal-cols" style="grid-template-columns:repeat(${cols},1fr);">`;
+  days.forEach(dt=>{
+    const jd=dayForDate(dt);const evts=daySchedule(jd);
+    let evHtml='';
+    evts.forEach(ev=>{
+      const top=(ev.h-START_H)*PX_H;const height=ev.dur*PX_H-2;
+      if(top<0||top>totalPx)return;
+      evHtml+=`<div class="cal-ev ${ev.evColor} ${ev.isDone?'is-done':''}" style="top:${top}px;height:${Math.max(height,20)}px;" onclick="calSelectDate(new Date(${dt.getFullYear()},${dt.getMonth()},${dt.getDate()}))">
+        <div class="cal-ev-title">${ev.title}</div>
+        ${height>26?`<div class="cal-ev-sub">${ev.subLabel}</div>`:''}
+      </div>`;
+    });
+    let hrLines='';
+    for(let h=START_H;h<END_H;h++)hrLines+=`<div class="cal-col-hr"></div>`;
+    colsHtml+=`<div class="cal-col">${hrLines}${evHtml}</div>`;
+  });
+  // now line
+  const now=new Date();const nowH=now.getHours()+now.getMinutes()/60;const nowTop=(nowH-START_H)*PX_H;
+  if(calView==='day'&&sameDay(calSelDate,now))colsHtml+=`<div class="now-line" style="top:${nowTop}px;left:0;right:0;"></div>`;
+  else if(calView==='week'){const ws=weekStart(calViewDate);for(let i=0;i<7;i++){if(sameDay(addDays(ws,i),now)){colsHtml+=`<div class="now-line" style="top:${nowTop}px;left:${i/7*100}%;width:${100/7}%;"></div>`;break;}}}
+  colsHtml+='</div>';
+
+  tgrid.innerHTML=timeHtml+colsHtml;
+
+  // scroll to 8am
+  const scroll=document.getElementById('cal-scroll');
+  if(scroll&&scroll.scrollTop===0)scroll.scrollTop=(8-START_H)*PX_H;
+}
+
+function renderCalDetail(dt){
+  const el=document.getElementById('cal-detail');if(!el)return;
+  const jd=dayForDate(dt);const today=new Date();const isT=sameDay(dt,today);
+  const dateStr=`${MONTHS[dt.getMonth()]} ${dt.getDate()}, ${dt.getFullYear()}`;
+  if(!jd){el.innerHTML=`<div class="cdp"><div class="cdp-day" style="font-size:20px;">${dt.getDate()}</div><div class="cdp-sub">${dateStr}${isT?' · Today':''}</div><div class="empty" style="padding:20px 8px;margin-top:10px;"><span class="mir material-icons-round" style="color:var(--t4)">event_busy</span>No study scheduled</div></div>`;return;}
+  const pl=PLAN_DAYS[jd-1];const isDone=S.dd[jd];
+  const subColor={P:'var(--phy)',C:'var(--chem)',M:'var(--math)'};const subName={P:'Physics',C:'Chemistry',M:'Maths'};
+  let chapHtml='';
+  if(pl.type==='study'){chapHtml=pl.chs.map(c=>{const st=S.cs[c.id]||'pending';const stc=st==='done'?'var(--grn)':st==='in-progress'?'var(--mock)':'var(--t4)';return `<div class="cdp-ch" onclick="calCycleChap('${c.id}',${dt.getFullYear()},${dt.getMonth()},${dt.getDate()})"><div style="width:7px;height:7px;border-radius:50%;background:${subColor[c.s]};flex-shrink:0;"></div><div style="flex:1;"><div style="font-size:11.5px;font-weight:600;${st==='done'?'text-decoration:line-through;color:var(--t4);':''}">${c.n}</div><div style="font-size:10px;color:var(--t3);margin-top:1px;">${subName[c.s]} · ${c.q} Qs/shift</div></div><div style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;background:${stc}22;color:${stc};">${st==='pending'?'Pending':st==='in-progress'?'In Progress':'Done'}</div></div>`;}).join('');}
+  else if(pl.type==='mock'){const ms2=MOCKS.filter(m=>m.d===jd);chapHtml=ms2.map(m=>{const done2=S.md[m.id];const sc2=S.ms[m.id];return `<div class="cdp-ch"><div style="width:7px;height:7px;border-radius:50%;background:var(--mock);flex-shrink:0;"></div><div style="flex:1;"><div style="font-size:11.5px;font-weight:600;">Mock #${m.id}</div><div style="font-size:10px;color:var(--t3);">${m.slot}${sc2&&sc2.t?' · '+sc2.t+'/300':''}</div></div><div style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;background:${done2?'var(--grna)':'var(--s5)'};color:${done2?'var(--grn)':'var(--t4)'};">${done2?'Done':'Pending'}</div></div>`;}).join('');}
+  else chapHtml=`<div class="cdp-ch"><div style="width:7px;height:7px;border-radius:50%;background:var(--yel);"></div><div style="font-size:11.5px;font-weight:600;margin-left:8px;">Full PCM Revision</div></div>`;
+  const progDone=pl.chs.filter(c=>S.cs[c.id]==='done').length;const progTotal=pl.chs.length;
+  el.innerHTML=`<div class="cdp">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+      <div><div style="font-size:9.5px;font-weight:700;color:var(--acc2);text-transform:uppercase;letter-spacing:.6px;">Day ${jd} of 23${isT?' · Today':''}</div><div class="cdp-day">${pl.title}</div><div class="cdp-sub">${dateStr}</div></div>
+      <button onclick="calMarkDone(${jd},new Date(${dt.getFullYear()},${dt.getMonth()},${dt.getDate()}))" style="padding:5px 10px;border-radius:7px;border:1px solid ${isDone?'rgba(34,197,94,.3)':'var(--bd2)'};background:${isDone?'var(--grna)':'var(--s3)'};color:${isDone?'var(--grn)':'var(--t3)'};font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;cursor:pointer;">${isDone?'✓ Done':'Mark Done'}</button>
+    </div>
+    ${pl.type==='study'&&progTotal>0?`<div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:10px;color:var(--t3);margin-bottom:4px;"><span>Progress</span><span>${progDone}/${progTotal}</span></div><div style="height:3.5px;background:var(--s5);border-radius:2px;overflow:hidden;"><div style="height:100%;border-radius:2px;background:linear-gradient(90deg,var(--acc),var(--acc2));width:${progTotal?progDone/progTotal*100:0}%;transition:width .4s;"></div></div></div>`:''}
+    <div style="font-size:9.5px;font-weight:700;color:var(--t4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:7px;">${pl.type==='mock'?'Mocks':pl.type==='revision'?'Revision':'Chapters'}</div>
+    ${chapHtml}
+    <div style="margin-top:14px;border-top:1px solid var(--bd);padding-top:11px;">
+      <div style="font-size:9.5px;font-weight:700;color:var(--t4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">Today's Timeline</div>
+      ${SCHED.slice(0,5).map(ev=>`<div class="cdp-ev"><div class="cdp-ev-dot" style="background:${ev.type==='break'?'var(--t5)':ev.type==='mixed'?'var(--acc)':'var(--phy)'}"></div><div><div class="cdp-ev-title">${ev.title}</div><div class="cdp-ev-time">${fmtH(ev.h)} – ${fmtH(ev.h+ev.dur)}</div></div></div>`).join('')}
+      <div style="font-size:10px;color:var(--t4);padding-left:18px;">+${SCHED.length-5} more…</div>
+    </div>
+  </div>`;
+}
+
+function calSelectDate(dt){calSelDate=new Date(dt);if(calView==='week')calViewDate=new Date(dt);renderCalendar();}
+function calCycleChap(id,y,m,d){const cur=S.cs[id]||'pending';S.cs[id]={pending:'in-progress','in-progress':'done',done:'pending'}[cur];sv();rr();renderCalDetail(new Date(y,m,d));}
+function calMarkDone(jd,dt){S.dd[jd]=!S.dd[jd];const pl=PLAN_DAYS[jd-1];if(S.dd[jd]&&pl.type==='study')pl.chs.forEach(c=>{if(S.cs[c.id]!=='done')S.cs[c.id]='done';});sv();rr();renderCalDetail(dt);}
+function calPrevWeek(){calViewDate=addDays(calViewDate,-7);renderCalendar();}
+function calNextWeek(){calViewDate=addDays(calViewDate,7);renderCalendar();}
+function calPrevMonth(){calViewDate.setMonth(calViewDate.getMonth()-1);renderCalendar();}
+function calNextMonth(){calViewDate.setMonth(calViewDate.getMonth()+1);renderCalendar();}
+function calGoToday(){calViewDate=new Date();calSelDate=new Date();renderCalendar();}
+function setCalView(v,btn){calView=v;document.querySelectorAll('.cvb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');renderCalendar();}
+
+// live now-line update every minute
+setInterval(()=>{if(document.getElementById('pg-calendar').classList.contains('on'))renderTimeline();},60000);
+
+// ════════════════════════════════════════════
+// POMODORO ENGINE
+// ════════════════════════════════════════════
+const POMO_CFG={
+  pomo:{dur:25*60,label:'Focus Time',color:'var(--acc2)'},
+  short:{dur:5*60,label:'Short Break',color:'var(--grn)'},
+  long:{dur:15*60,label:'Long Break',color:'var(--chem)'},
+  sw:{dur:0,label:'Stopwatch',color:'var(--mock)'}
+};
+let pomoMode='pomo',pomoRunning=false,pomoSecs=25*60,pomoTotal=25*60,pomoCycle=0,pomoInterval=null;
+let pomoSessionsDone=0,pomoMinsToday=0;
+
+// reset day stats if new day
+(function(){
+  const today2=new Date().toISOString().split('T')[0];
+  if(S.pomoDate!==today2){S.pomoDate=today2;S.pomoDayMins=0;S.pomoSessions=0;sv();}
+  pomoMinsToday=S.pomoDayMins;pomoSessionsDone=S.pomoSessions;
+})();
+
+function pomoToggle(){
+  if(pomoMode==='sw'){swToggle();return;}
+  if(pomoRunning){
+    clearInterval(pomoInterval);pomoRunning=false;
+    document.getElementById('pmain-icon').textContent='play_arrow';
+    document.getElementById('pmain').style.background='var(--acc)';
+  } else {
+    if(Notification.permission==='default')Notification.requestPermission();
+    pomoRunning=true;
+    document.getElementById('pmain-icon').textContent='pause';
+    document.getElementById('pmain').style.background='var(--red)';
+    pomoInterval=setInterval(()=>{
+      pomoSecs--;
+      if(pomoSecs<=0){
+        clearInterval(pomoInterval);pomoRunning=false;
+        document.getElementById('pmain-icon').textContent='play_arrow';
+        document.getElementById('pmain').style.background='var(--acc)';
+        if(pomoMode==='pomo'){
+          pomoSessionsDone++;pomoMinsToday+=Math.round(pomoTotal/60);
+          S.pomoSessions=pomoSessionsDone;S.pomoDayMins=pomoMinsToday;sv();
+          pomoCycle=(pomoCycle+1)%4;
+          const nextMode=pomoCycle===0?'long':'short';
+          setPomoMode(nextMode,document.getElementById(`ptab-${nextMode}`));
+          try{new Notification('AVAKINI 🎯',{body:`Session done! Take a ${pomoCycle===0?'long':'short'} break.`});}catch(e){}
+        } else {
+          setPomoMode('pomo',document.getElementById('ptab-pomo'));
+          try{new Notification('AVAKINI ⏰',{body:'Break over! Back to focus.'});}catch(e){}
+        }
+        pomoUpdateStats();return;
+      }
+      pomoUpdateDisplay();
+    },1000);
+  }
+}
+function pomoReset(){clearInterval(pomoInterval);pomoRunning=false;pomoSecs=pomoTotal;document.getElementById('pmain-icon').textContent='play_arrow';document.getElementById('pmain').style.background='var(--acc)';pomoUpdateDisplay();}
+function pomoSkip(){clearInterval(pomoInterval);pomoRunning=false;document.getElementById('pmain-icon').textContent='play_arrow';document.getElementById('pmain').style.background='var(--acc)';if(pomoMode==='pomo')setPomoMode('short',document.getElementById('ptab-short'));else setPomoMode('pomo',document.getElementById('ptab-pomo'));}
+function setPomoMode(mode,btn){
+  pomoMode=mode;clearInterval(pomoInterval);pomoRunning=false;
+  document.getElementById('pmain-icon').textContent='play_arrow';
+  document.getElementById('pmain').style.background='var(--acc)';
+  document.querySelectorAll('.pomo-tab').forEach(b=>b.classList.remove('on'));
+  if(btn)btn.classList.add('on');
+  const cfg=POMO_CFG[mode];
+  document.getElementById('plbl').textContent=cfg.label;
+  document.getElementById('pring').style.stroke=cfg.color;
+  if(mode!=='sw'){pomoTotal=cfg.dur;pomoSecs=pomoTotal;document.getElementById('sw-panel').style.display='none';document.getElementById('pring-wrap').style.display='block';}
+  else{document.getElementById('sw-panel').style.display='block';document.getElementById('pring-wrap').style.display='none';}
+  pomoUpdateDisplay();
+}
+function setCustomDur(min){
+  document.querySelectorAll('.pomo-presets .pbtn').forEach(b=>b.classList.remove('on'));event.target.classList.add('on');
+  clearInterval(pomoInterval);pomoRunning=false;pomoTotal=min*60;pomoSecs=pomoTotal;
+  document.getElementById('pmain-icon').textContent='play_arrow';
+  document.getElementById('pmain').style.background='var(--acc)';
+  document.getElementById('plbl').textContent=`${min} min Focus`;
+  pomoUpdateDisplay();
+}
+function pomoUpdateDisplay(){
+  if(pomoMode==='sw')return;
+  const m=Math.floor(pomoSecs/60),s=pomoSecs%60;
+  document.getElementById('ptime').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  document.getElementById('psess').textContent=`Session ${pomoCycle+1} of 4`;
+  // ring stroke-dashoffset: circ=603.19
+  const pct=pomoTotal>0?1-(pomoSecs/pomoTotal):0;
+  document.getElementById('pring').style.strokeDashoffset=603.19*(1-pct);
+  // session dots
+  let dots='';
+  for(let i=0;i<4;i++){
+    if(i<pomoCycle)dots+=`<div class="pdot done"></div>`;
+    else if(i===pomoCycle&&pomoRunning)dots+=`<div class="pdot active"></div>`;
+    else dots+=`<div class="pdot"></div>`;
+  }
+  document.getElementById('pdots').innerHTML=dots;
+}
+function pomoUpdateStats(){
+  document.getElementById('pstat-mins').textContent=pomoMinsToday+'m';
+  document.getElementById('pstat-sess').textContent=pomoSessionsDone;
+}
+
+// ════════════════════════════════════════════
+// STOPWATCH
+// ════════════════════════════════════════════
+let swRunning=false,swSecs=0,swInterval=null,swLaps=[];
+function swToggle(){
+  if(swRunning){clearInterval(swInterval);swRunning=false;document.getElementById('sw-btn').innerHTML='<span class="mir material-icons-round">play_arrow</span>Start';}
+  else{swRunning=true;document.getElementById('sw-btn').innerHTML='<span class="mir material-icons-round">pause</span>Pause';swInterval=setInterval(()=>{swSecs++;swUpdateDisplay();},1000);}
+}
+function swReset(){clearInterval(swInterval);swRunning=false;swSecs=0;swLaps=[];swUpdateDisplay();document.getElementById('sw-laps').innerHTML='';document.getElementById('sw-btn').innerHTML='<span class="mir material-icons-round">play_arrow</span>Start';}
+function swLap(){if(!swRunning)return;swLaps.push(swSecs);const p=n=>String(n).padStart(2,'0');const h=Math.floor(swSecs/3600),m=Math.floor((swSecs%3600)/60),s=swSecs%60;document.getElementById('sw-laps').innerHTML=swLaps.slice().reverse().map((l,i)=>{const hh=Math.floor(l/3600),mm=Math.floor((l%3600)/60),ss=l%60;return `<div class="logitem"><span style="font-size:10px;">Lap ${swLaps.length-i}</span><span class="logt">${p(hh)}:${p(mm)}:${p(ss)}</span></div>`;}).join('');}
+function swUpdateDisplay(){const p=n=>String(n).padStart(2,'0');const h=Math.floor(swSecs/3600),m=Math.floor((swSecs%3600)/60),s=swSecs%60;const el=document.getElementById('sw-disp');if(el)el.textContent=`${p(h)}:${p(m)}:${p(s)}`;}
+
+// ════════════════════════════════════════════
+// TIMER CHAPTER LIST
+// ════════════════════════════════════════════
+function renderTimerChs(){
+  const el=document.getElementById('tch-list');if(!el)return;
+  const day=curDay();
+  if(day<=0){el.innerHTML='<div style="font-size:11px;color:var(--t4);">Study starts tomorrow! 🎯</div>';return;}
+  const pl=PLAN_DAYS[day-1];
+  if(!pl||pl.type!=='study'){el.innerHTML=`<div style="font-size:11.5px;color:var(--t3);">${pl?.type==='mock'?'🎯 Mock test day — go attempt your mocks!':'📝 Revision day — review weak topics!'}</div>`;return;}
+  const sc={P:'var(--phy)',C:'var(--chem)',M:'var(--math)'};
+  el.innerHTML=pl.chs.map(c=>{
+    const st=S.cs[c.id]||'pending';
+    const stc=st==='done'?'var(--grn)':st==='in-progress'?'var(--mock)':'var(--t3)';
+    return `<div class="tch-item" onclick="timerCycleChap('${c.id}')"><div style="width:7px;height:7px;border-radius:50%;background:${sc[c.s]};flex-shrink:0;"></div><span class="tch-name" style="${st==='done'?'text-decoration:line-through;color:var(--t4);':''}">${c.n}</span><span class="tch-st" style="background:${stc}22;color:${stc};">${st==='pending'?'⬜':st==='in-progress'?'🔄':'✅'}</span></div>`;
+  }).join('');
+}
+function timerCycleChap(id){const cur=S.cs[id]||'pending';S.cs[id]={pending:'in-progress','in-progress':'done',done:'pending'}[cur];sv();rr();renderTimerChs();}
+
+// ════════════════════════════════════════════
+// LOG
+// ════════════════════════════════════════════
+function addLog(){const inp=document.getElementById('li');const v=inp.value.trim();if(!v)return;S.logs.unshift({t:v,ts:new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})});inp.value='';sv();renderLogs();}
+function renderLogs(){const el=document.getElementById('ll');if(!el)return;if(!S.logs.length){el.innerHTML='<div class="empty" style="padding:14px;"><span class="mir material-icons-round">notes</span>No logs yet</div>';return;}el.innerHTML=S.logs.slice(0,30).map(l=>`<div class="logitem"><span style="font-size:11px">${l.t}</span><span class="logt">${l.ts}</span></div>`).join('');}
+
+// ════════════════════════════════════════════
+// NAV
+// ════════════════════════════════════════════
+const TITLES={overview:'Overview',timetable:'Daily Timetable',plan:'23-Day Plan',chapters:'Chapters',mocks:'Mock Tests',analytics:'Score Analytics',calendar:'Study Calendar',timer:'Focus Timer'};
+function go(pg,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.ni').forEach(b=>b.classList.remove('on'));
+  const p=document.getElementById('pg-'+pg);if(p)p.classList.add('on');
+  if(btn)btn.classList.add('on');
+  const tbt=document.getElementById('tbt');if(tbt)tbt.textContent=TITLES[pg]||pg;
+  if(pg==='timer'){renderLogs();renderTimerChs();pomoUpdateDisplay();pomoUpdateStats();}
+  if(pg==='analytics')renderAna();
+  if(pg==='calendar'){calSelDate=new Date();calViewDate=new Date();renderCalendar();}
+}
+
+// ════════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════════
+rr();
+pomoUpdateDisplay();
+pomoUpdateStats();
+if('Notification' in window&&Notification.permission==='default')Notification.requestPermission();
+</script>
+</body>
+</html>
